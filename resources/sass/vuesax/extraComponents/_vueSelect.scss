@@ -1,0 +1,59 @@
+/*=========================================================================================
+    File Name: _vueSelect.scss
+    Description: vue-select component style.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+
+@import "../_variables.scss";
+
+.v-select {
+  .vs__dropdown-menu  {
+    .vs__dropdown-option--highlight {
+      background: rgba(var(--vs-primary),1) !important;
+      color: $white !important;
+    }
+
+    .vs__dropdown-option {
+      color: $content-color;
+    }
+  }
+
+
+  .vs__selected {
+    color: $content-color;
+  }
+}
+
+.theme-dark {
+  .v-select{
+      .vs__dropdown-toggle{
+          background: $content-dark-bg;
+
+          .vs__clear svg{
+              fill: $white;
+          }
+          .vs__deselect svg{
+              fill: $white;
+              opacity: 0.7;
+          }
+      }
+      .vs__selected{
+          color: $white;
+          background: $dark-card-color;
+          border: none;
+      }
+      .vs__open-indicator{
+          fill: $grey;
+      }
+      .vs__dropdown-menu{
+          background: $content-dark-bg;
+          .vs__dropdown-option {
+            color: $theme-dark-text-color;
+          }
+      }
+  }
+}

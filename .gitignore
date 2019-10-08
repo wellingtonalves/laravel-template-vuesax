@@ -1,0 +1,12 @@
+/node_modules
+/public/
+/public/storage
+/storage/*.key
+/vendor
+.env
+.phpunit.result.cache
+npm-debug.log
+yarn-error.log
+.idea
+composer.lock
+/public/js/app.js

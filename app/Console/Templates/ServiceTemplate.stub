@@ -1,0 +1,25 @@
+<?php
+
+
+namespace App\Services{{dominio}};
+
+use App\Repositories\{{name}}Repository;
+use App\Services\AbstractService;
+
+class {{name}}Service extends AbstractService
+{
+
+    /**
+     * @var {{name}}Repository
+     */
+    protected $repository;
+
+    /**
+     * {{name}}Service constructor.
+     * @param {{name}}Repository $repository
+     */
+    public function __construct({{name}}Repository $repository)
+    {
+        $this->repository = $repository;
+    }
+}
