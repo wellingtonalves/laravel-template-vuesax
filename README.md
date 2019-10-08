@@ -2,7 +2,7 @@
 Laravel template with Vuesax (VueJs).
 
 - This project contains:
-Repository, Vue and code generator.
+Repository, Nested models,Vue and code generator.
 
 
 - Command to generate files: php artisan scaffold:generate --all=ModelName
