@@ -1,0 +1,3247 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700);/*=========================================================================================
+  File Name: app.scss
+  Description: Write your custom scss
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Author: Pixinvent
+  Author URL: hhttp://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+  File Name: main.scss
+  Description: Main scss file. Imports other scss partials from 'vuesax' folder
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+/*=========================================================================================
+    File Name: _layout.scss
+    Description: partial- main layout styles container - imports layout styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _layoutCommon.scss
+    Description: Common layout styles. This style will apply to all layouts
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+html {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
+}
+
+body {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  background: #f8f8f8;
+  font-weight: 400;
+  overflow-x: hidden;
+  max-width: 100%;
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+}
+
+.sidebar-swipe-area {
+  position: fixed;
+  background: transparent;
+  height: 100vh;
+  width: 30px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.feather.feather-menu {
+  z-index: 9;
+}
+
+.layout--main {
+  height: 100%;
+  min-height: 100%;
+}
+
+textarea.vs-textarea {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+#content-overlay {
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: opacity .7s;
+  z-index: -1;
+}
+
+.show-overlay #content-overlay {
+  z-index: 41000;
+  opacity: 1;
+}
+
+.the-footer {
+  display: flex;
+  align-items: center;
+}
+
+li.vs-navbar--item a {
+  color: inherit;
+}
+
+.vs-content-sidebar.items-no-padding .vs-sidebar--items {
+  padding: 0;
+}
+
+div[id$="demo"] .vx-card:not(:last-of-type) {
+  margin-bottom: 2.2rem;
+}
+
+.scroll-area {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.app-search-container {
+  background-color: #fff;
+}
+
+.demo-alignment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.demo-alignment > * {
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.op-block {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.app-page .router-view {
+  padding-bottom: 0;
+}
+
+.app-page.navbar-floating .app-fixed-height {
+  height: calc(100vh - 12.1rem);
+}
+
+.app-page.navbar-floating.footer-hidden .app-fixed-height {
+  height: calc(100vh - 9.6rem);
+}
+
+.app-page.navbar-floating.footer-sticky .app-fixed-height {
+  height: calc(100vh - 13.1rem);
+}
+
+.app-page.navbar-sticky .app-fixed-height {
+  height: calc(100vh - 11.1rem);
+}
+
+.app-page.navbar-sticky.footer-hidden .app-fixed-height {
+  height: calc(100vh - 8.6rem);
+}
+
+.app-page.navbar-sticky.footer-sticky .app-fixed-height {
+  height: calc(100vh - 12.1rem);
+}
+
+.app-page.navbar-static .app-fixed-height {
+  height: calc(100vh - 11.1rem);
+}
+
+.app-page.navbar-static.footer-hidden .app-fixed-height {
+  height: calc(100vh - 7.6rem);
+}
+
+.app-page.navbar-hidden .app-fixed-height {
+  height: calc(100vh - 6.1rem);
+}
+
+.app-page.navbar-hidden.footer-hidden .app-fixed-height {
+  height: calc(100vh - 4.1rem);
+}
+
+.app-page.navbar-hidden.footer-sticky .app-fixed-height {
+  height: calc(100vh - 8.1rem);
+}
+
+.app-fixed-height {
+  height: calc(100vh - 14.1rem);
+}
+
+.vs-sidebar .vs-sidebar--items {
+  overflow: hidden;
+  height: 100%;
+}
+
+.vs-alert code.language-markup {
+  background: transparent !important;
+  color: #636363 !important;
+}
+
+.title-page {
+  font-size: 1.5em;
+  color: #042E5D;
+}
+
+@media (max-width: 576px) {
+  .router-view {
+    padding: 1.2rem !important;
+  }
+
+  .footer-sticky .router-view {
+    padding-bottom: 5rem !important;
+  }
+
+  .title-page {
+    font-size: 1em;
+  }
+}
+
+/*=========================================================================================
+    File Name: _layoutModern.scss
+    Description: Default layout styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vs-navbar.vx-navbar {
+  padding: .8rem 1rem;
+  width: calc(100% - 260px - 4.4rem);
+  position: fixed;
+  border-radius: .5rem;
+  transition: all .5s;
+  z-index: 10000;
+}
+
+.vs-navbar.vx-navbar.navbar-reduced {
+  width: calc(100% - 80px - 4.4rem);
+}
+
+.vs-navbar.vx-navbar.navbar-full {
+  width: calc(100% - 4.4rem);
+}
+
+#content-area {
+  margin-left: 260px;
+  height: 100%;
+  transition: margin-left 0.5s;
+}
+
+#content-area .content-wrapper {
+  min-height: calc(100vh - 3.5rem);
+}
+
+#content-area.content-area-reduced {
+  margin-left: 80px;
+}
+
+#content-area.content-area-full {
+  margin-left: 0px;
+}
+
+#content-area .vx-navbar__search-input input {
+  border: none !important;
+}
+
+#content-area .vx-navbar__search-input input:focus {
+  box-shadow: none;
+}
+
+.router-view {
+  position: relative;
+  padding: 2.2rem;
+}
+
+.router-view .router-content {
+  margin-top: 0;
+}
+
+.router-view .content-area__heading h2 {
+  color: #636363;
+}
+
+/*=========================================================================================
+    File Name: _theNavbar.scss
+    Description: The navbar styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.95) 44%, rgba(248, 248, 248, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  padding: 2.2rem;
+  padding-top: 1.3rem;
+  background-repeat-x: repeat;
+  z-index: 41000;
+  width: calc(100% - 260px);
+  height: 103px;
+  background-repeat-y: no-repeat;
+  position: fixed;
+  top: 0;
+}
+
+.vx-navbar-wrapper .vx-navbar .vs-con-items {
+  width: 100%;
+}
+
+.vx-navbar-wrapper .vx-navbar .vs-con-items .search-full-container {
+  background: #fff;
+}
+
+.vx-navbar-wrapper .vx-navbar .vs-con-items .vx-auto-suggest {
+  color: #626262;
+}
+
+.content-area-reduced .vx-navbar-wrapper {
+  width: calc(100% - 80px);
+}
+
+.content-area-reduced .vs-navbar.vx-navbar {
+  width: calc(100% - 80px - 4.4rem);
+}
+
+.show-overlay .vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.navbar-sticky .vx-navbar-wrapper {
+  padding: 0;
+  background: none;
+}
+
+.navbar-sticky .vx-navbar-wrapper .vx-navbar {
+  width: calc(100% - 260px);
+  border-radius: 0;
+  padding: .8rem 2.2rem;
+}
+
+.navbar-sticky .content-area-reduced .vx-navbar-wrapper .vx-navbar {
+  width: calc(100% - 80px);
+}
+
+.navbar-sticky .router-view .router-content {
+  margin-top: 4.5rem;
+}
+
+.navbar-static .vx-navbar-wrapper {
+  padding: 0;
+  background: none;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.navbar-static .vx-navbar-wrapper .vx-navbar {
+  width: 100%;
+  border-radius: 0;
+  padding: .8rem 2.2rem;
+  background: transparent !important;
+  box-shadow: none;
+  position: relative;
+}
+
+.navbar-static .router-view {
+  padding-top: 1rem;
+}
+
+.navbar-static .router-view .router-content {
+  margin-top: 0;
+}
+
+.navbar-hidden .vx-navbar-wrapper {
+  display: none;
+}
+
+.search-full-container {
+  z-index: 50000;
+}
+
+.search-full-container .vx-auto-suggest > div {
+  height: 100%;
+}
+
+.search-full-container .vx-auto-suggest input[type="text"],
+.search-full-container .vx-auto-suggest .input-span-placeholder {
+  padding: 1.25rem 3rem;
+}
+
+.search-full-container .vx-auto-suggest .vs-input--icon.feather {
+  top: 34%;
+  left: 0.8rem;
+}
+
+.search-full-container > div.feather-icon {
+  position: absolute !important;
+}
+
+.bookmark-dropdown {
+  z-index: 41001;
+}
+
+.navbar-custom .vs-navbar--btn-responsive {
+  display: none !important;
+}
+
+.navbar-custom .vs-spacer {
+  display: block !important;
+}
+
+.navbar-custom .vs-con-items {
+  display: flex !important;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .vx-navbar-wrapper {
+    width: calc(100% - 1.2rem);
+  }
+
+  .navbar-sticky .vx-navbar-wrapper .vx-navbar {
+    width: 100%;
+    padding: .8rem 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .vx-navbar-wrapper {
+    padding: 1.2rem;
+  }
+
+  .vx-navbar-wrapper .vx-navbar.navbar-full {
+    width: calc(100% - 2.4rem);
+  }
+
+  .navbar-sticky .vx-navbar-wrapper {
+    padding: 0;
+  }
+
+  .navbar-sticky .vx-navbar-wrapper .vx-navbar {
+    width: 100%;
+    padding: .8rem 1.5rem;
+  }
+
+  .navbar-static .vx-navbar-wrapper .vx-navbar {
+    width: 100%;
+    padding: .8rem 1.5rem;
+  }
+
+  .navbar-static .router-view .router-content {
+    margin-top: 0;
+  }
+}
+
+.starred-page:hover,
+.starred-page--more:hover {
+  color: rgba(var(--vs-primary), 1);
+}
+
+.i18n-dropdown .vs-dropdown--item-link {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 364px) {
+  .i18n-dropdown {
+    width: 95vw;
+    left: 90vw !important;
+  }
+
+  .i18n-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+.cart-dropdown {
+  width: 365px;
+}
+
+.cart-dropdown .cart-dropdown-item-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  transition: .35s;
+}
+
+.notification-dropdown,
+.cart-dropdown {
+  width: 365px;
+}
+
+@media screen and (max-width: 500px) {
+  .notification-dropdown,
+  .cart-dropdown {
+    width: 95vw;
+    left: 97.5vw !important;
+  }
+
+  .notification-dropdown .vs-dropdown--menu--after,
+  .cart-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+.notification-dropdown .notification:hover,
+.cart-dropdown .notification:hover {
+  background-color: #f7f7f7;
+}
+
+.notification-dropdown .checkout-footer,
+.notification-dropdown .notification-footer,
+.cart-dropdown .checkout-footer,
+.cart-dropdown .notification-footer {
+  background-color: #f8f8f8;
+}
+
+.scroll-area--nofications-dropdown,
+.scroll-area--cart-items-dropdowm {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-height: 25rem;
+}
+
+@media screen and (max-height: 334px) {
+  .vx-navbar-dropdown {
+    top: calc(100vh - 82.5vh) !important;
+  }
+
+  .vx-navbar-dropdown .vs-dropdown--menu--after {
+    display: none;
+  }
+}
+
+/*=========================================================================================
+    File Name: _footer.scss
+    Description: Footer styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.footer-sticky .the-footer {
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  width: calc(100% - 260px);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  z-index: 40000;
+}
+
+.footer-sticky .content-area-reduced .the-footer {
+  width: calc(100% - 80px);
+}
+
+.footer-sticky .content-area-full .the-footer {
+  width: 100%;
+}
+
+.footer-sticky .router-view {
+  padding-bottom: 5rem;
+}
+
+.footer-hidden .the-footer {
+  display: none;
+}
+
+.the-footer {
+  padding: 1rem 2.2rem;
+}
+
+/*=========================================================================================
+    File Name: _typography.scss
+    Description: partial- typography styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+body {
+  color: #626262;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c2c2c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2c2c2c;
+}
+
+h1,
+.h1 {
+  font-size: 28px;
+}
+
+h2,
+.h2 {
+  font-size: 24.36px;
+}
+
+h3,
+.h3 {
+  font-size: 21.14px;
+}
+
+h4,
+.h4 {
+  font-size: 18.48px;
+}
+
+h5,
+.h5 {
+  font-size: 15.96px;
+}
+
+h6,
+.h6 {
+  font-size: 14px;
+}
+
+.vs-tooltip h4 {
+  color: #fff;
+}
+
+a:active,
+a:visited,
+a:hover,
+a {
+  color: rgba(var(--vs-primary), 1);
+}
+
+u {
+  text-decoration: underline;
+}
+
+/*=========================================================================================
+    File Name: _misc.scss
+    Description: partial- misc styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+code {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  background: #eee;
+  padding: 0.1rem .3rem;
+  border-radius: 3px;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-img {
+  background-image: url(/images/vuesax-login-bg.jpg?04351a33eb1f49873e982c8b025d5718);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-page-bg-color {
+  background-color: #eff2f7;
+}
+
+.count-down {
+  text-align: center;
+}
+
+.single-counter {
+  display: inline-block;
+  position: relative;
+  width: 105px;
+  padding: 18px 10px 10px;
+}
+
+.single-counter span {
+  display: block;
+  text-align: center;
+}
+
+.single-counter .timer {
+  font-size: 3rem;
+}
+
+.activity-timeline {
+  margin-left: 1.5rem;
+  padding-left: 40px;
+  border-left: 2px solid #E5E8EB;
+}
+
+.activity-timeline li {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.activity-timeline li .timeline-icon {
+  position: absolute;
+  top: 0;
+  left: -4.3rem;
+  border-radius: 50%;
+  padding: .75rem;
+  padding-bottom: 0.4rem;
+}
+
+.activity-timeline li .activity-desc {
+  font-size: .9rem;
+}
+
+.activity-timeline li .activity-e-time {
+  font-size: .8rem;
+}
+
+.chat-card-log {
+  height: 240px;
+}
+
+.vjs-poster {
+  background-size: cover !important;
+  width: 100% !important;
+}
+
+.spinner {
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*=========================================================================================
+    File Name: _extraComponents.scss
+    Description: partial - imports extra components styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _formWizard.scss
+    Description: Styles for form wizard externsion.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vue-form-wizard.md .wizard-navigation .wizard-progress-with-circle {
+  top: 33px !important;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .wizard-icon-circle {
+  border: 3px solid #cccccc;
+  width: 55px;
+  height: 55px;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .wizard-icon-circle .wizard-icon {
+  font-size: 1.5rem;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-nav .stepTitle {
+  color: #626262;
+}
+
+/*=========================================================================================
+    File Name: _vueSelect.scss
+    Description: vue-select component style.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
+  background: rgba(var(--vs-primary), 1) !important;
+  color: #fff !important;
+}
+
+.v-select .vs__dropdown-menu .vs__dropdown-option {
+  color: #626262;
+}
+
+.v-select .vs__selected {
+  color: #626262;
+}
+
+.theme-dark .v-select .vs__dropdown-toggle {
+  background: #262c49;
+}
+
+.theme-dark .v-select .vs__dropdown-toggle .vs__clear svg {
+  fill: #fff;
+}
+
+.theme-dark .v-select .vs__dropdown-toggle .vs__deselect svg {
+  fill: #fff;
+  opacity: 0.7;
+}
+
+.theme-dark .v-select .vs__selected {
+  color: #fff;
+  background: #10163a;
+  border: none;
+}
+
+.theme-dark .v-select .vs__open-indicator {
+  fill: #b8c2cc;
+}
+
+.theme-dark .v-select .vs__dropdown-menu {
+  background: #262c49;
+}
+
+.theme-dark .v-select .vs__dropdown-menu .vs__dropdown-option {
+  color: #c2c6dc;
+}
+
+/*=========================================================================================
+    File Name: _charts.scss
+    Description: Styles for charts.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.echarts {
+  width: 100% !important;
+}
+
+/*=========================================================================================
+    File Name: _contextMenu.scss
+    Description: Styles for context menu
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.v-context {
+  padding: 0 !important;
+  border-radius: .5rem !important;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+}
+
+.v-context li a {
+  padding: .75rem 2rem !important;
+}
+
+.v-context li a:hover {
+  color: #fff !important;
+}
+
+.v-context li a:focus,
+.v-context li a:hover {
+  background: #042E5D !important;
+}
+
+.theme-dark .v-context {
+  background: #262c49 !important;
+}
+
+.theme-dark .v-context li a {
+  color: #c2c6dc !important;
+}
+
+.theme-dark .v-context li a:focus,
+.theme-dark .v-context li a:hover {
+  background: #10163a !important;
+}
+
+/*=========================================================================================
+    File Name: _quillEditor.scss
+    Description: Styles for quill editor externsion.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.quill-editor .ql-bubble .ql-tooltip {
+  z-index: 51000;
+}
+
+.theme-dark .quill-editor .ql-snow.ql-toolbar,
+.theme-dark .quill-editor .ql-snow.ql-container {
+  border-color: #414561;
+}
+
+/*=========================================================================================
+    File Name: _datePicker.scss
+    Description: Styles for datepicker component.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _variables.scss
+    Description: partial- SCSS varibales
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*========================================================
+        SPACING
+=========================================================*/
+
+/*========================================================
+        COLORS
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        TYPOGRAPHY
+=========================================================*/
+
+/*========================================================
+        DARK THEME
+=========================================================*/
+
+.vdp-datepicker input {
+  padding: .7rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #626262;
+}
+
+.vdp-datepicker .day.blank {
+  background: transparent;
+}
+
+.vdp-datepicker .cell.day.selected {
+  color: #fff;
+}
+
+/*=========================================================================================
+    File Name: _themes.scss
+    Description: partial- themes - imports theme styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/*=========================================================================================
+    File Name: _themeDark.scss
+    Description: partial- Styles for dark theme
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.theme-dark {
+  background-color: #262c49;
+  color: #c2c6dc !important;
+}
+
+.theme-dark .content-area__heading h2 {
+  color: #ebeefd;
+}
+
+.theme-dark code {
+  color: #b8c2cc;
+  background: #262c49;
+}
+
+.theme-dark pre[class*="language-"] {
+  background-color: #1E1E1E;
+  text-shadow: none;
+}
+
+.theme-dark pre[class*="language-"] code {
+  background-color: transparent;
+}
+
+.theme-dark pre[class*="language-"] code[class*="language-"] {
+  text-shadow: none;
+}
+
+.theme-dark label {
+  color: #c2c6dc;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: #ebeefd;
+}
+
+.theme-dark ul.bordered-items li {
+  border-color: #414561 !important;
+}
+
+.theme-dark .notification-dropdown .notification:hover,
+.theme-dark .notification-dropdown .cart-item:hover,
+.theme-dark .cart-dropdown .notification:hover,
+.theme-dark .cart-dropdown .cart-item:hover {
+  background: #10163a;
+}
+
+.theme-dark .notification-dropdown .checkout-footer,
+.theme-dark .notification-dropdown .notification-footer,
+.theme-dark .cart-dropdown .checkout-footer,
+.theme-dark .cart-dropdown .notification-footer {
+  background-color: #262c49;
+}
+
+.theme-dark .notification-dropdown .checkout-footer:hover,
+.theme-dark .notification-dropdown .notification-footer:hover,
+.theme-dark .cart-dropdown .checkout-footer:hover,
+.theme-dark .cart-dropdown .notification-footer:hover {
+  background-color: #10163a;
+}
+
+.theme-dark .vs-component.vs-notifications.vs-noti-dark {
+  color: #22292f !important;
+}
+
+.theme-dark .vs-component.vs-notifications.vs-noti-dark .filling {
+  background: #b8c2cc !important;
+}
+
+.theme-dark .vs-component.vs-notifications.vs-noti-dark h3 {
+  color: #22292f !important;
+}
+
+.theme-dark .vx-card {
+  background-color: #10163a;
+}
+
+.theme-dark .vx-card.card-border {
+  border-color: #414561;
+}
+
+.theme-dark .vx-card .vx-card__title h4 {
+  color: #ebeefd;
+}
+
+.theme-dark .vx-card .con-vs-alert-dark {
+  color: #dae1e7;
+}
+
+.theme-dark .vx-card .code-content pre[class^="language-"] {
+  background-color: #262c49;
+  text-shadow: none;
+}
+
+.theme-dark .vx-card .code-content pre[class^="language-"] code {
+  background-color: transparent;
+}
+
+.theme-dark .vx-card .code-content pre[class^="language-"] code[class*="language-"] {
+  text-shadow: none;
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-primary h4 {
+  color: rgba(var(--vs-primary), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-success h4 {
+  color: rgba(var(--vs-success), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-danger h4 {
+  color: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-info h4 {
+  color: rgba(var(--vs-info), 1);
+}
+
+.theme-dark .vx-card .vx-card__body .con-vs-alert-warning h4 {
+  color: rgba(var(--vs-warning), 1);
+}
+
+.theme-dark .vx-card .tasks-today-container .tasks-today__task:hover {
+  background: #212744 !important;
+}
+
+.theme-dark .vx-navbar-wrapper {
+  background: linear-gradient(to bottom, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.theme-dark .vx-navbar-wrapper .vx-navbar .search-full-container {
+  background-color: #10163a !important;
+}
+
+.theme-dark .vx-navbar-wrapper .vx-navbar .search-full-container .vx-auto-suggest input {
+  background: #10163a;
+}
+
+.theme-dark .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list .auto-suggest__suggestion {
+  color: #c2c6dc;
+}
+
+.theme-dark .vx-navbar-wrapper .vx-navbar .vx-auto-suggest .auto-suggest-suggestions-list .auto-suggest__suggestion.vx-auto-suggest__current-selected {
+  background: #10163a;
+  color: #fff;
+}
+
+.theme-dark .main-menu-sidebar .vs-sidebar {
+  background-color: #10163a;
+}
+
+.theme-dark .main-menu-sidebar .shadow-bottom {
+  width: 94%;
+  background: linear-gradient(to bottom, #0f1642 44%, rgba(15, 22, 66, 0.51) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar .feather-icon,
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar span:not(.vs-chip--text) {
+  color: #c2c6dc;
+}
+
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar a:not(.router-link-active) .feather-icon svg,
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar a:not(.router-link-active) .feather-icon span {
+  color: #c2c6dc;
+}
+
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar a.router-link-active span {
+  color: #fff;
+}
+
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+.theme-dark .main-menu-sidebar .scroll-area--main-sidebar .vs-sidebar-group.vs-sidebar-group-open > .group-header {
+  background: #262c49;
+}
+
+.theme-dark .ps:hover > .ps__scrollbar-y-rail:hover {
+  background-color: #10163a;
+}
+
+.theme-dark .grid-demo__layout-container .vs-row .vs-col {
+  background-color: #212744;
+}
+
+.theme-dark .grid-demo__layout-container .vs-row .vs-col:last-of-type {
+  background-color: #212744;
+}
+
+.theme-dark .grid-demo__layout-container--block .vs-row {
+  background-color: #212744;
+}
+
+.theme-dark .chat-card-log .flex-row-reverse .msg.chat-sent-msg {
+  background-color: #10163a !important;
+}
+
+.theme-dark .chat-card-log .msg {
+  background-color: #212744 !important;
+}
+
+.theme-dark .chat-input-container,
+.theme-dark .chat__input {
+  background-color: #10163a !important;
+  border-top: 1px solid #212744;
+}
+
+.theme-dark .app-search-container {
+  background-color: #10163a;
+}
+
+.theme-dark #chat-app .chat__profile-search .vs-inputx {
+  border-color: #414561 !important;
+}
+
+.theme-dark #chat-app #chat-list-sidebar .chat-scroll-area .chat__contact:hover {
+  background: #10163a;
+}
+
+.theme-dark #chat-app .chat__header header {
+  background: #212744 !important;
+}
+
+.theme-dark #chat-app .chat__header header h6 {
+  color: #ebeefd;
+}
+
+.theme-dark #chat-app .chat__bg {
+  background-color: #171e49;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236f76a1' fill-opacity='0.4'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.theme-dark #chat-app .chat__bg .select-none {
+  background-color: #212744 !important;
+}
+
+.theme-dark #chat-app .chat__bg h4 {
+  background-color: #212744 !important;
+  color: #ebeefd;
+}
+
+.theme-dark #chat-app .chat__bg .msg {
+  background-color: #10163a !important;
+}
+
+.theme-dark #chat-app .chat__bg.chat-content-area .chat-content-scroll-area {
+  background: rgba(34, 41, 47, 0.2);
+}
+
+.theme-dark #chat-app .chat__bg .chat__input input {
+  border-color: #414561 !important;
+}
+
+.theme-dark #todo-app .todo-list h6.todo-title {
+  color: #ebeefd;
+}
+
+.theme-dark #todo-app .todo-list .todo-tags .con-vs-chip {
+  background: #10163a;
+  color: #c2c6dc !important;
+}
+
+.theme-dark #todo-app .list-item-component {
+  border-color: #414561;
+}
+
+.theme-dark #todo-app .list-item-component:hover {
+  box-shadow: 0px 0 0 0px #1E1E1E;
+}
+
+.theme-dark #email-app .email__mails .email__mail-item .mail__mail-item {
+  background: #10163a;
+}
+
+.theme-dark #email-app .email__mails .email__mail-item .mail__mail-item:hover {
+  box-shadow: 10px 0 0 0px #1E1E1E;
+}
+
+.theme-dark #email-app .email__mails .email__mail-item .mail__mail-item.mail__opened-mail {
+  background: #262c49;
+}
+
+.theme-dark #email-app .email__mails .email__mail-item:not(:first-of-type) .mail__mail-item {
+  border-top: 1px solid #414561;
+}
+
+.theme-dark #email-app .email-view-sidebar .vs-sidebar {
+  background-color: #212744 !important;
+  border-left-color: #414561;
+}
+
+.theme-dark #email-app .email-view-sidebar .email-header {
+  border-bottom-color: #414561;
+}
+
+.theme-dark #calendar-app .full-calendar-body .week-row .day-cell.not-cur-month .day-number {
+  color: rgba(255, 255, 255, 0.24);
+}
+
+.theme-dark .vs-alert code {
+  color: #b8c2cc;
+  background: #262c49;
+}
+
+.theme-dark .con-vs-avatar {
+  background: #10163a !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-primary {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-success {
+  background: rgba(var(--vs-success), 1) !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-danger {
+  background: rgba(var(--vs-danger), 1) !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-warning {
+  background: rgba(var(--vs-warning), 1) !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-info {
+  background: rgba(var(--vs-info), 1) !important;
+}
+
+.theme-dark .con-vs-avatar.con-vs-avatar-dark {
+  background: #b8c2cc !important;
+}
+
+.theme-dark #profile-page .profile-header .profile-header-nav {
+  background: #10163a !important;
+}
+
+.theme-dark #faq-page .faq-bg {
+  background-color: #10163a;
+}
+
+.theme-dark .vs-breadcrumb--ol a,
+.theme-dark .vs-breadcrumb--ol .vs-breadcrum--separator {
+  color: #dae1e7;
+}
+
+.theme-dark .vs-button-dark.vs-button-filled {
+  background: #b8c2cc !important;
+}
+
+.theme-dark .vs-button-dark.vs-button-filled .vs-button--text {
+  color: #1E1E1E;
+}
+
+.theme-dark .demo-text-dark .vs-button-text {
+  color: #b8c2cc;
+}
+
+.theme-dark .vs-button-dark.vs-button-border,
+.theme-dark .vs-button-dark.vs-button-flat,
+.theme-dark .vs-button-dark.vs-button-line {
+  border-color: #b8c2cc;
+}
+
+.theme-dark .vs-button-dark .vs-button--text,
+.theme-dark .vs-button-dark .vs-icon {
+  color: #b8c2cc;
+}
+
+.theme-dark .con-vs-chip {
+  background: #10163a;
+  color: #c2c6dc !important;
+}
+
+.theme-dark .con-vs-chip.vs-chip-primary {
+  background: rgba(var(--vs-primary), 1);
+}
+
+.theme-dark .con-vs-chip.vs-chip-success {
+  background: rgba(var(--vs-success), 1);
+}
+
+.theme-dark .con-vs-chip.vs-chip-danger {
+  background: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .con-vs-chip.vs-chip-warning {
+  background: rgba(var(--vs-warning), 1);
+}
+
+.theme-dark .con-vs-chip.vs-chip-info {
+  background: rgba(var(--vs-info), 1);
+}
+
+.theme-dark .con-vs-chip.vs-chip-dark {
+  background: rgba(var(--vs-dark), 1);
+}
+
+.theme-dark .con-vs-chip .con-vs-avatar {
+  background-color: #262c49 !important;
+}
+
+.theme-dark .con-vs-chip.con-color {
+  color: #fff !important;
+}
+
+.theme-dark .con-chips .con-chips--input {
+  background-color: #262c49;
+}
+
+.theme-dark .vs-divider .vs-divider-border {
+  border-color: #414561 !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-primary {
+  border-color: rgba(var(--vs-primary), 1) !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-success {
+  border-color: rgba(var(--vs-success), 1) !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-danger {
+  border-color: rgba(var(--vs-danger), 1) !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-warning {
+  border-color: rgba(var(--vs-warning), 1) !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-info {
+  border-color: rgba(var(--vs-info), 1) !important;
+}
+
+.theme-dark .vs-divider .vs-divider-border.vs-divider-border-dark {
+  border-color: rgba(184, 194, 204, 0.5) !important;
+}
+
+.theme-dark .vs-divider .vs-divider--text {
+  background: transparent;
+  color: #c2c6dc !important;
+}
+
+.theme-dark .vs-divider .vs-divider--text .vs-icon {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-dropdown--menu,
+.theme-dark .vs-dropdown--menu--after {
+  background: #262c49;
+  border-color: #414561;
+}
+
+.theme-dark .vs-dropdown--menu .con-dropdown--group-ul,
+.theme-dark .vs-dropdown--menu--after .con-dropdown--group-ul {
+  background: #262c49;
+}
+
+.theme-dark .vs-dropdown--menu .vs-dropdown--item .vs-dropdown--item-link.disabled,
+.theme-dark .vs-dropdown--menu--after .vs-dropdown--item .vs-dropdown--item-link.disabled {
+  color: #b8c2cc !important;
+}
+
+.theme-dark .con-vs-loading {
+  background: rgba(16, 22, 58, 0.6);
+}
+
+.theme-dark .con-vs-loading h4.title-loading {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-list .vs-list--header {
+  box-shadow: 0 7px 7px -5px rgba(38, 44, 73, 0.8);
+}
+
+.theme-dark .vs-list .vs-list--item {
+  border-color: rgba(194, 198, 220, 0.08);
+}
+
+.theme-dark .vs-navbar {
+  border-color: #262c49;
+}
+
+.theme-dark .vs-navbar li.vs-navbar--item a {
+  color: #dae1e7;
+}
+
+.theme-dark .vs-navbar li.vs-navbar--item.is-active-item a {
+  color: #fff;
+}
+
+.theme-dark .vs-navbar {
+  background-color: #10163a !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--ul {
+  background: #10163a;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--ul .vs-pagination--li {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--ul .item-pagination.is-current {
+  color: #fff;
+}
+
+.theme-dark .vs-pagination--nav .vs-pagination--buttons {
+  background: #10163a;
+  color: #c2c6dc;
+}
+
+.theme-dark .con-vs-popup .vs-popup {
+  background: #262c49 !important;
+  color: #c2c6dc;
+}
+
+.theme-dark .con-vs-popup .vs-popup .vs-popup--header {
+  background: #10163a !important;
+}
+
+.theme-dark .con-vs-popup .vs-popup .vs-popup--header .vs-popup--close {
+  background: #262c49 !important;
+  color: #c2c6dc;
+}
+
+.theme-dark #popup-demo .demo-alignment .vs-button {
+  background: #262c49 !important;
+}
+
+.theme-dark #popup-demo .demo-alignment .vs-button:hover {
+  box-shadow: #262c49 0px 8px 25px -8px !important;
+}
+
+.theme-dark .vs-sidebar {
+  background: #10163a;
+}
+
+.theme-dark .vs-sidebar h4,
+.theme-dark .vs-sidebar h5 {
+  color: #ebeefd;
+}
+
+.theme-dark .vs-sidebar .vs-sidebar--items .vs-sidebar--item a {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-sidebar .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+.theme-dark .con-vs-slider .vs-slider {
+  background: rgba(38, 44, 73, 0.5);
+}
+
+.theme-dark .ul-tabs .vs-tabs--li button {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-tabs-dark .activeChild button,
+.theme-dark .vs-tabs-dark button:not(:disabled):hover {
+  color: #b8c2cc !important;
+}
+
+.theme-dark .vs-tabs-dark .line-vs-tabs {
+  background: linear-gradient(30deg, #b8c2cc, rgba(184, 194, 204, 0.5)) !important;
+  box-shadow: 0 0 8px 0 rgba(184, 194, 204, 0.4) !important;
+}
+
+.theme-dark .vs-tooltip.vs-tooltip-dark {
+  background: #262c49;
+}
+
+.theme-dark .con-upload .con-input-upload,
+.theme-dark .con-upload .con-img-upload {
+  background-color: #262c49;
+}
+
+.theme-dark .con-upload .btn-upload-all {
+  background-color: #10163a;
+}
+
+.theme-dark .con-upload .con-input-upload {
+  border-color: #414561;
+}
+
+.theme-dark input {
+  background: #10163a;
+  color: #c2c6dc;
+}
+
+.theme-dark input ~ .vs-placeholder-label,
+.theme-dark input ~ .vs-input--placeholder {
+  color: #c2c6dc;
+}
+
+.theme-dark ::-webkit-input-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark ::-moz-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark :-ms-input-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark ::-ms-input-placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark ::placeholder {
+  color: #c2c6dc !important;
+}
+
+.theme-dark .vs-input--icon {
+  color: #c2c6dc;
+  border-right-color: rgba(194, 198, 220, 0.2);
+}
+
+.theme-dark .vs-input--icon.icon-after {
+  border-left-color: rgba(194, 198, 220, 0.2);
+}
+
+.theme-dark .vs-input-number {
+  background: #262c49;
+}
+
+.theme-dark .vs-input-number button.vs-input-number--button-less:disabled,
+.theme-dark .vs-input-number button.vs-input-number--button-less.limit,
+.theme-dark .vs-input-number button.vs-input-number--button-plus:disabled,
+.theme-dark .vs-input-number button.vs-input-number--button-plus.limit {
+  opacity: 0.75;
+  background: #b8c2cc;
+}
+
+.theme-dark .vs-con-textarea {
+  background: #262c49;
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-con-textarea .vs-textarea {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-con-textarea .vs-textarea:focus {
+  border-color: transparent;
+}
+
+.theme-dark .vs-con-textarea.focusx {
+  border-color: transparent;
+}
+
+.theme-dark .vs-con-textarea.focusx h4 {
+  background: transparent;
+}
+
+.theme-dark .vs-con-textarea.textarea-danger .vs-textarea {
+  color: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .vs-switch {
+  background: #262c49;
+}
+
+.theme-dark .vs-switch.vs-switch-primary.vs-switch-active {
+  background: rgba(var(--vs-primary), 1);
+}
+
+.theme-dark .vs-switch.vs-switch-success.vs-switch-active {
+  background: rgba(var(--vs-success), 1);
+}
+
+.theme-dark .vs-switch.vs-switch-danger.vs-switch-active {
+  background: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .vs-switch.vs-switch-warning.vs-switch-active {
+  background: rgba(var(--vs-warning), 1);
+}
+
+.theme-dark .vs-switch.vs-switch-info.vs-switch-active {
+  background: rgba(var(--vs-info), 1);
+}
+
+.theme-dark .vs-switch.vs-switch-dark.vs-switch-active {
+  background: #b8c2cc;
+}
+
+.theme-dark .vs-radio-dark .vs-radio--circle {
+  background: #b8c2cc;
+  box-shadow: 0 3px 12px 0 rgba(184, 194, 204, 0.4);
+}
+
+.theme-dark .op-block {
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .vs-input-dark .vs-input--input:focus {
+  border-color: #b8c2cc !important;
+}
+
+.theme-dark .vs-input-dark .vs-input--input:focus ~ .vs-input--placeholder {
+  color: #b8c2cc;
+}
+
+.theme-dark .vue-form-wizard .wizard-icon-circle {
+  background: #262c49;
+  border-color: #212744;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a {
+  color: #fff;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a .stepTitle {
+  color: #dae1e7;
+}
+
+.theme-dark .vue-form-wizard .wizard-nav-pills > li > a:hover {
+  color: #fff;
+}
+
+.theme-dark .vue-form-wizard .wizard-navigation .wizard-nav .stepTitle {
+  color: #dae1e7;
+}
+
+.theme-dark .vs-con-table .vs-con-tbody {
+  background: #212744;
+  border: 2px solid #262c49;
+}
+
+.theme-dark .vs-con-table .vs-con-tbody .vs-table--tbody-table tr {
+  background: #262c49;
+}
+
+.theme-dark .vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead tr {
+  background: #212744;
+}
+
+.theme-dark .vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead .con-td-check {
+  background: #212744;
+}
+
+.theme-dark .vs-con-table .con-edit-td {
+  background: #212744;
+}
+
+.theme-dark .vs-con-table .is-selected .tr-values {
+  background: #212744 !important;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-tooltip.light {
+  background: #212744;
+  border-color: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-tooltip.light .apexcharts-tooltip-title {
+  background: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-xaxistooltip {
+  background: #212744;
+  border-color: #262c49;
+  color: #fff;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-xaxistooltip:before,
+.theme-dark .apexcharts-canvas .apexcharts-xaxistooltip:after {
+  border-bottom-color: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-yaxistooltip {
+  background: #212744;
+  border-color: #262c49;
+  color: #fff;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:before,
+.theme-dark .apexcharts-canvas .apexcharts-yaxistooltip:after {
+  border-left-color: #212744;
+}
+
+.theme-dark .apexcharts-canvas text {
+  fill: #fff !important;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-pie-series path {
+  stroke: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text {
+  color: #b8c2cc !important;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-toolbar .apexcharts-menu {
+  background: #262c49;
+  border-color: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-toolbar .apexcharts-menu .apexcharts-menu-item {
+  background: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-radar-series polygon {
+  fill: #262c49;
+  stroke: #212744;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-track path {
+  stroke: #262c49;
+}
+
+.theme-dark .apexcharts-canvas .apexcharts-selection-icon:not(.selected):hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-icon:not(.selected):hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-in-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-zoom-out-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-reset-zoom-icon:hover svg,
+.theme-dark .apexcharts-canvas .apexcharts-menu-icon:hover svg {
+  fill: #fff;
+}
+
+.theme-dark .token.operator,
+.theme-dark .token.entity,
+.theme-dark .token.url,
+.theme-dark .language-css .token.string,
+.theme-dark .style .token.string {
+  background: transparent;
+}
+
+.theme-dark .search-tab-filter {
+  background: #10163a;
+}
+
+.theme-dark .vs-select--options {
+  background: #10163a;
+  border-color: rgba(184, 194, 204, 0.2);
+}
+
+.theme-dark .vs-select--options span {
+  color: #c2c6dc;
+}
+
+.theme-dark .vs-select--options .vs-select--item {
+  color: #b8c2cc;
+  border-color: rgba(184, 194, 204, 0.2);
+  box-shadow: none;
+}
+
+.theme-dark .vs-select--options .vs-select--item:hover {
+  background: #262c49;
+}
+
+.theme-dark .quill-editor .ql-toolbar button {
+  color: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar button svg path {
+  stroke: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-fill {
+  fill: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-stroke {
+  stroke: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-picker {
+  color: #fff;
+}
+
+.theme-dark .quill-editor .ql-toolbar .ql-picker .ql-picker-options {
+  background: #10163a;
+}
+
+.theme-dark .quill-editor .ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .activity-timeline {
+  border-color: #414561;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar {
+  background: #262c49;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .prev:not(.disabled):hover,
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .next:not(.disabled):hover,
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .up:not(.disabled):hover {
+  background: #10163a;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .prev:after {
+  border-right-color: #fff;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar header .next:after {
+  border-left-color: #fff;
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar .disabled {
+  color: rgba(184, 194, 204, 0.6);
+}
+
+.theme-dark .vdp-datepicker .vdp-datepicker__calendar .cell.highlighted {
+  background: #10163a;
+}
+
+.theme-dark .vdp-datepicker input {
+  border: 0;
+  padding: 10px;
+}
+
+.theme-dark .vs-collapse.shadow {
+  box-shadow: 0 0px 8px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.theme-dark .vs-collapse .vs-collapse-item {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+.theme-dark .vs-collapse.border {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .vs-collapse.border .vs-collapse-item {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+.theme-dark .vs-collapse.margin .vs-collapse-item {
+  box-shadow: 0 2px 15px 0 rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .vx-auto-suggest .auto-suggest-suggestions-list {
+  background-color: #262c49;
+}
+
+.theme-dark .footer-sticky .the-footer {
+  background-color: #10163a;
+  color: #fff !important;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog {
+  background: #262c49;
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog header {
+  background: #10163a;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog header .con-title-after h3 {
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog header .vs-dialog-cancel,
+.theme-dark .con-vs-dialog .vs-dialog header .vs-icon {
+  background: #262c49;
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog footer .vs-button--text {
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog .vs-dialog-text .date-label {
+  color: #fff;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog input,
+.theme-dark .con-vs-dialog .vs-dialog .vs-con-textarea {
+  background: #10163a;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog .con-upload .con-input-upload,
+.theme-dark .con-vs-dialog .vs-dialog .con-upload .con-img-upload {
+  background: #10163a;
+}
+
+.theme-dark .con-vs-dialog .vs-dialog .quill-editor {
+  background: #262c49;
+}
+
+.theme-dark #theme-customizer .vs-switch,
+.theme-dark #theme-customizer input {
+  background: #262c49;
+}
+
+.theme-dark .add-new-data-sidebar input {
+  background: #262c49;
+}
+
+.theme-dark .vx-card .vs-pagination--nav .vs-pagination--ul {
+  background: #262c49;
+}
+
+.theme-dark .vx-card .vs-pagination--nav .vs-pagination--ul .vs-pagination--li {
+  color: #fff;
+}
+
+.theme-dark .vx-card .vs-pagination--nav .vs-pagination--buttons {
+  background: #262c49;
+  color: #fff;
+}
+
+.theme-dark .vx-card .con-vs-avatar {
+  background: #262c49 !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-primary {
+  background: rgba(var(--vs-primary), 1) !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-success {
+  background: rgba(var(--vs-success), 1) !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-danger {
+  background: rgba(var(--vs-danger), 1) !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-warning {
+  background: rgba(var(--vs-warning), 1) !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-info {
+  background: rgba(var(--vs-info), 1) !important;
+}
+
+.theme-dark .vx-card .con-vs-avatar.con-vs-avatar-dark {
+  background: #b8c2cc !important;
+}
+
+.theme-dark .vx-card .con-vs-chip {
+  background: #262c49;
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-primary {
+  background: rgba(var(--vs-primary), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-success {
+  background: rgba(var(--vs-success), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-danger {
+  background: rgba(var(--vs-danger), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-warning {
+  background: rgba(var(--vs-warning), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-info {
+  background: rgba(var(--vs-info), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip.vs-chip-dark {
+  background: rgba(var(--vs-dark), 1);
+}
+
+.theme-dark .vx-card .con-vs-chip .con-vs-avatar {
+  background-color: #10163a !important;
+}
+
+.theme-dark .vx-card .con-chips .con-chips--input {
+  background-color: #10163a !important;
+}
+
+.theme-dark .vx-card .vs-navbar {
+  background-color: #262c49 !important;
+}
+
+.theme-dark .vx-card .vs-navbar .vs-navbar--btn-responsive .btn-responsive-line {
+  background: #c2c6dc;
+}
+
+.theme-dark .vx-card .vs-navbar-shadow .vs-navbar--item.is-active-item {
+  background-color: #10163a;
+}
+
+.theme-dark .vx-card input {
+  background: #262c49;
+}
+
+/*=========================================================================================
+    File Name: _themeSemiDark.scss
+    Description: partial- Styles for semi dark theme
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.theme-semi-dark .main-menu-sidebar .vs-sidebar {
+  background-color: #10163a;
+}
+
+.theme-semi-dark .main-menu-sidebar .shadow-bottom {
+  width: 94%;
+  background: linear-gradient(to bottom, #0f1642 44%, rgba(15, 22, 66, 0.51) 73%, rgba(44, 48, 60, 0) 100%);
+}
+
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar .feather-icon,
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar span {
+  color: #fff;
+}
+
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar a .feather-icon svg,
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar a .feather-icon span {
+  color: #fff;
+}
+
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar .vs-sidebar-group.vs-sidebar-group-open > .group-header {
+  background: #262c49;
+}
+
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar .vs-sidebar-group.vs-sidebar-group-active > .group-header {
+  background: #262c49;
+}
+
+.theme-semi-dark .main-menu-sidebar .scroll-area--main-sidebar .con-vs-chip {
+  box-shadow: 0px 0px 4px 2px #262c49;
+}
+
+/*=========================================================================================
+    File Name: _routerAnimations.scss
+    Description: partial- router animations
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/* ZOOM FADE */
+
+.zoom-fade-enter-active,
+.zoom-fade-leave-active {
+  transition: transform .35s, opacity .28s ease-in-out;
+}
+
+.zoom-fade-enter {
+  transform: scale(0.97);
+  opacity: 0;
+}
+
+.zoom-fade-leave-to {
+  transform: scale(1.03);
+  opacity: 0;
+}
+
+/* FADE TRNASITION */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .28s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* PAGE SLIDE */
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity .35s, transform .4s;
+}
+
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(30%);
+}
+
+/* ZOOM OUT */
+
+.zoom-out-enter-active,
+.zoom-out-leave-active {
+  transition: opacity .35s ease-in-out, transform .45s ease-out;
+}
+
+.zoom-out-enter,
+.zoom-out-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* UNFOLD SLIDE */
+
+.fade-bottom-enter-active,
+.fade-bottom-leave-active {
+  transition: opacity .3s, transform .35s;
+}
+
+.fade-bottom-enter {
+  opacity: 0;
+  transform: translateY(-8%);
+}
+
+.fade-bottom-leave-to {
+  opacity: 0;
+  transform: translateY(8%);
+}
+
+/*=========================================================================================
+    File Name: _transitions.scss
+    Description: Transition styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.list-leave-active {
+  position: absolute;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.list-enter-up-leave-active {
+  transition: none !important;
+}
+
+.list-enter-up-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/*=========================================================================================
+    File Name: _customClasses.scss
+    Description: partial- this file containes custom helper classes
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vx-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.vx-row > .vx-col {
+  padding: 0 1rem;
+}
+
+.vx-row.match-height > .vx-col {
+  display: flex;
+}
+
+.vx-row.no-gutter {
+  margin: 0;
+}
+
+.vx-row.no-gutter > .vx-col {
+  padding: 0;
+}
+
+.text-primary {
+  color: rgba(var(--vs-primary), 1) !important;
+}
+
+.text-success {
+  color: rgba(var(--vs-success), 1) !important;
+}
+
+.text-danger {
+  color: rgba(var(--vs-danger), 1) !important;
+}
+
+.text-warning {
+  color: rgba(var(--vs-warning), 1) !important;
+}
+
+.text-dark {
+  color: rgba(var(--vs-dark), 1) !important;
+}
+
+.bg-primary {
+  background-color: rgba(var(--vs-primary), 1) !important;
+}
+
+.bg-success {
+  background-color: rgba(var(--vs-success), 1) !important;
+}
+
+.bg-danger {
+  background-color: rgba(var(--vs-danger), 1) !important;
+}
+
+.bg-warning {
+  background-color: rgba(var(--vs-warning), 1) !important;
+}
+
+.bg-dark {
+  background-color: rgba(var(--vs-dark), 1) !important;
+}
+
+.border-primary {
+  border-color: rgba(var(--vs-primary), 1) !important;
+}
+
+.border-success {
+  border-color: rgba(var(--vs-success), 1) !important;
+}
+
+.border-danger {
+  border-color: rgba(var(--vs-danger), 1) !important;
+}
+
+.border-warning {
+  border-color: rgba(var(--vs-warning), 1) !important;
+}
+
+.border-dark {
+  border-color: rgba(var(--vs-dark), 1) !important;
+}
+
+.hover\:bg-primary:hover {
+  background-color: rgba(var(--vs-primary), 1) !important;
+}
+
+.hover\:bg-success:hover {
+  background-color: rgba(var(--vs-success), 1) !important;
+}
+
+.hover\:bg-danger:hover {
+  background-color: rgba(var(--vs-danger), 1) !important;
+}
+
+.hover\:bg-warning:hover {
+  background-color: rgba(var(--vs-warning), 1) !important;
+}
+
+.hover\:bg-dark:hover {
+  background-color: rgba(var(--vs-dark), 1) !important;
+}
+
+.hover\:text-primary:hover {
+  color: rgba(var(--vs-primary), 1) !important;
+}
+
+.hover\:text-success:hover {
+  color: rgba(var(--vs-success), 1) !important;
+}
+
+.hover\:text-danger:hover {
+  color: rgba(var(--vs-danger), 1) !important;
+}
+
+.hover\:text-warning:hover {
+  color: rgba(var(--vs-warning), 1) !important;
+}
+
+.hover\:text-dark:hover {
+  color: rgba(var(--vs-dark), 1) !important;
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-primary), 1), rgba(var(--vs-primary), 0.7)) !important;
+}
+
+.bg-success-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-success), 1), rgba(var(--vs-success), 0.7)) !important;
+}
+
+.bg-danger-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-danger), 1), rgba(var(--vs-danger), 0.7)) !important;
+}
+
+.bg-warning-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-warning), 1), rgba(var(--vs-warning), 0.7)) !important;
+}
+
+.bg-dark-gradient {
+  background: linear-gradient(118deg, rgba(var(--vs-dark), 1), rgba(var(--vs-dark), 0.7)) !important;
+}
+
+.btn-group button {
+  padding: 1rem 1.25rem !important;
+}
+
+.btn-group :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group :not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn-group-vertical button {
+  padding: 1rem 1.25rem !important;
+  width: 100%;
+}
+
+.btn-group-vertical :not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.btn-group-vertical :not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-big {
+  font-size: 4rem;
+}
+
+.text-color-base {
+  color: #626262;
+}
+
+.blur-1 {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.blur-2 {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.blur-3 {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.sidebar-spacer {
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.background-absolute .vs-sidebar--background {
+  position: absolute;
+}
+
+.sidebar-spacer-with-margin {
+  width: calc(100% - 260px - 2.2rem);
+  margin-left: calc(260px + 2.2rem);
+}
+
+.sidebar-spacer--wide {
+  width: calc(100% - 400px);
+  margin-left: 400px;
+}
+
+.full-vs-sidebar .vs-sidebar {
+  max-width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+@media only screen and (max-width: 992px) {
+  .full-vs-sidebar .vs-sidebar {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+.vs-input-shadow-drop input {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+}
+
+.vs-input-no-border .vs-input--input {
+  border: none !important;
+}
+
+.vs-input-no-border .vs-input--input:focus {
+  border: none !important;
+}
+
+.vs-input-no-shdow-focus .vs-input--input:focus {
+  box-shadow: none !important;
+}
+
+.vs-select-no-border .vs-select--input {
+  border: none !important;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+ul.bordered-items > li:not(:last-of-type):not([class*='shadow']) {
+  border-bottom: 1px solid #dae1e7;
+}
+
+.user-list {
+  display: flex;
+}
+
+.user-list .con-vs-avatar {
+  transition: .3s;
+}
+
+.user-list .con-vs-avatar:hover {
+  transform: translateY(-5px) scale(1.07);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+  z-index: 999;
+}
+
+.dropdown-custom .vs-dropdown--custom {
+  padding: 0 !important;
+  border: 0;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.dropdown-custom .vs-dropdown--menu--after {
+  background: #042E5D !important;
+  right: 1.6rem !important;
+}
+
+.d-theme-dark-bg {
+  background-color: #fff;
+}
+
+.d-theme-border-grey-light {
+  border-color: #dae1e7;
+}
+
+.d-theme-text-inverse {
+  color: #fff;
+}
+
+.theme-dark .d-theme-dark-bg {
+  background-color: #10163a;
+}
+
+.theme-dark .d-theme-input-dark-bg input {
+  background-color: #10163a;
+}
+
+.theme-dark .d-theme-heading-color {
+  color: #2c2c2c;
+}
+
+.theme-dark .d-theme-text-inverse {
+  color: #626262;
+}
+
+.theme-dark .d-theme-border-grey-light {
+  border-color: #414561;
+}
+
+/*=========================================================================================
+  File Name: _fixesVuesax.scss
+  Description: Partial - Fixes/Add vuesax styles
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+.vs-alert {
+  font-size: 1rem;
+}
+
+.vs-alert code {
+  background: #b5b5b5;
+  color: #fff;
+}
+
+.vs-breadcrumb--ol a:focus,
+.vs-breadcrumb--ol a:hover {
+  color: #042E5D;
+}
+
+.vs-tooltip {
+  z-index: 52000;
+}
+
+.con-chips .con-chips--input {
+  border: none;
+}
+
+.con-chips .con-vs-chip {
+  margin: .75rem;
+}
+
+.con-chips .con-chips--remove-all {
+  right: 9px;
+}
+
+.con-vs-chip {
+  min-height: 26px;
+  min-width: 26px;
+  font-size: .8rem;
+}
+
+.vs-collapse-item--header {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.con-content--item {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.vs-collapse.default .open-item .con-content--item,
+.vs-collapse.shadow .open-item .con-content--item,
+.vs-collapse.border .open-item .con-content--item,
+.vs-collapse.margin .open-item .con-content--item {
+  opacity: 1;
+  padding: 1rem;
+}
+
+.vs-collapse.shadow .vs-collapse-item--icon-header {
+  transform: translate(-50%, -50%);
+}
+
+.vs-collapse.shadow .open-item .vs-collapse-item--icon-header {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.con-vs-dialog {
+  z-index: 52005;
+}
+
+.con-vs-dialog .vs-dialog header h3 {
+  padding: 0.8rem;
+}
+
+.con-vs-dialog .vs-dialog header span.after {
+  width: 0;
+}
+
+.con-vs-dialog .vs-dialog .vs-dialog-text {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.con-vs-dialog .vs-dialog footer {
+  padding: 1rem;
+}
+
+.vs-con-dropdown {
+  font-size: 1rem;
+}
+
+.con-vs-dropdown--menu {
+  z-index: 42000;
+}
+
+.vs-list--item .list-titles .vs-list--subtitle {
+  font-size: .85rem;
+}
+
+.vs-list--item:last-child {
+  border-bottom: none;
+}
+
+.con-vs-popup {
+  z-index: 53000;
+}
+
+.con-vs-popup .vs-popup--content {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.vs-tabs--li button {
+  font-size: 1rem;
+}
+
+.con-select .vs-select--input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vs-select--options {
+  font-size: 1rem;
+}
+
+.vs-select--options span {
+  color: #626262;
+  font-size: 1rem;
+}
+
+.vs-switch--text {
+  font-size: 0.7rem;
+}
+
+.vs-con-input .vs-inputx {
+  padding: .7rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vs-con-input .vx-inputx:not(.input-rounded-full) {
+  border-radius: 5px;
+}
+
+.vs-input--input.normal {
+  padding: .7rem;
+  font-size: 1rem;
+}
+
+.vs-input--input.hasIcon {
+  padding: 0.7rem 1rem 0.7rem 3rem;
+}
+
+.vs-input--input.hasIcon.icon-after-input {
+  padding: 0.7rem 3rem 0.7rem 1rem;
+}
+
+.vs-input--placeholder.normal {
+  padding: .6rem;
+}
+
+.vs-input--input.large {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.vs-input--input.large.hasIcon {
+  padding: 1rem 0.8rem 1rem 2.5rem;
+}
+
+.vs-input--placeholder.large {
+  padding: 1rem;
+}
+
+.vs-input--input.small {
+  padding: .4rem;
+  font-size: .8rem;
+}
+
+.vs-input--placeholder.small {
+  padding: .2rem .6rem;
+  font-size: .8rem;
+}
+
+.vs-input--input.large ~ .vs-input--icon {
+  top: 1rem;
+  left: 0.8rem;
+}
+
+.vs-input--icon {
+  top: 13px;
+}
+
+.vs-input--icon.feather {
+  top: 10px;
+}
+
+.no-icon-border .vs-input--icon {
+  border: none;
+}
+
+.vs-textarea {
+  font-size: 1rem;
+}
+
+.vs-con-textarea {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  transform: translateY(-3px);
+}
+
+.vs-col {
+  padding: 0 15px;
+}
+
+.con-img-upload {
+  overflow: hidden;
+  padding: 0.6rem;
+}
+
+.con-img-upload .img-upload {
+  margin: 15px;
+}
+
+.view-upload {
+  z-index: 52000;
+}
+
+.select-large input.vs-select--input {
+  padding: 11px;
+}
+
+i.wizard-icon {
+  font-style: inherit;
+}
+
+.stepTitle {
+  margin-top: .5rem;
+}
+
+i.feather {
+  font-weight: 100;
+}
+
+.vs-con-table {
+  background: transparent;
+}
+
+.vs-con-table .vs-table--header .vs-table--search {
+  padding: 1rem 0;
+}
+
+.vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {
+  padding: 10px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {
+  left: 10px;
+}
+
+.vs-con-table .vs-table--header .vs-table--search i {
+  left: 10px;
+}
+
+.vs-con-table .vs-con-tbody {
+  background: #f8f8f8;
+  border: 2px solid #f8f8f8;
+  width: 100%;
+  overflow: auto;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table {
+  font-size: 1rem;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-spacer {
+  height: 2px;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-table .tr-expand td {
+  padding: 0;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .tr-table td {
+  padding: 1rem;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.vs-con-table .vs-con-tbody .vs-table--tbody-table .vs-table--thead .con-td-check {
+  background: #f8f8f8;
+  box-shadow: none;
+}
+
+.vs-con-table .vs-table--pagination {
+  margin-top: 1rem;
+}
+
+.con-vs-checkbox,
+.con-vs-radio {
+  justify-content: flex-start !important;
+}
+
+.con-vs-radio {
+  display: inline-flex;
+}
+
+.input-rounded-full input {
+  border-radius: 20px;
+}
+
+.v-select .dropdown-toggle .vs__actions .clear {
+  padding-top: 4px;
+}
+
+.vs-button {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.vs-button.vs-button-gradient:hover {
+  box-shadow: none !important;
+}
+
+.vs-button:not(.vs-radius):not(.includeIconOnly):not(.small):not(.large) {
+  padding: .75rem 2rem;
+}
+
+.vs-button:not(.vs-radius):not(.includeIconOnly):not(.small):not(.large).vs-button-border {
+  padding: .679rem 2rem;
+}
+
+.vs-button.small:not(.includeIconOnly) {
+  padding: 0.5rem 1.5rem;
+}
+
+.vs-button.large:not(.includeIconOnly) {
+  padding: 1rem 2.5rem;
+}
+
+.vs-button.large {
+  font-size: 1.25rem;
+}
+
+.vs-button.large .vs-button--icon {
+  font-size: 1.25rem;
+}
+
+.vs-button.round {
+  border-radius: 1.5rem;
+}
+
+.vs-button.includeIcon {
+  float: none;
+}
+
+.vs-popup--title h3,
+.vs-notifications h3 {
+  margin-bottom: 0;
+}
+
+.vs-notifications {
+  z-index: 200000 !important;
+}
+
+.vs-notifications h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 15.96px;
+}
+
+.vs-navbar-null .vs-navbar--item a:hover,
+.vs-navbar-flat .vs-navbar--item a:hover,
+.vs-navbar-fund .vs-navbar--item a:hover,
+.vs-navbar-border .vs-navbar--item a:hover,
+.vs-navbar-shadow .vs-navbar--item a:hover {
+  color: #042E5D !important;
+}
+
+h3.vs-navbar--title {
+  margin-bottom: 0;
+}
+
+.vs-navbar-gradient .vs-navbar-item-primary.is-active-item {
+  color: #fff !important;
+}
+
+.vs-con-dropdown {
+  color: inherit;
+}
+
+.dropdown-button-container .vs-button {
+  padding: .72rem 1.5rem !important;
+}
+
+.dropdown-button-container .vs-button-line {
+  padding: 9px 10px !important;
+}
+
+.vs-alert--title {
+  color: inherit;
+}
+
+.vs-input.input-rounded-full .vs-input--input.hasIcon {
+  padding: .8rem 1rem 0.8rem 3rem;
+}
+
+.vs-input.input-rounded-full .input-span-placeholder {
+  padding-left: 3rem;
+  padding-top: .7rem;
+}
+
+.vs-input.input-rounded-full .vs-icon {
+  margin-top: .1rem;
+  margin-left: 0.6rem;
+  font-size: 1rem;
+}
+
+.vs-tabs-position-left .vs-tabs--li {
+  padding: .35rem 0.3rem;
+}
+
+.vs-pagination--li.is-current .effect {
+  border-radius: 5rem;
+}
+
+.vs-pagination--li.is-current {
+  border-radius: 5rem;
+}
+
+.vs-pagination--ul {
+  padding: 0;
+}
+
+.vs-select--options {
+  border: 1px solid #eee;
+  z-index: 530001;
+}
+
+.vs-input--icon.feather {
+  padding: .2rem .5rem 0rem .4rem;
+}
+
+.vs-input--input.hasIcon + .vs-input--placeholder {
+  padding-left: 3rem;
+}
+
+.vs-input--input.large.hasIcon {
+  padding: 1rem .8rem 1rem 3rem;
+}
+
+.con-vs-alert {
+  box-shadow: none !important;
+}
+
+.vs-alert {
+  font-weight: 500;
+}
+
+.vs-checkbox-small .vs-checkbox--input:checked + .vs-checkbox .vs-icon {
+  margin-top: 4px;
+  margin-left: -1px;
+}
+
+.vs-checkbox-small input:checked + .vs-checkbox {
+  background-color: rgba(var(--vs-primary), 1) !important;
+}
+
+.vs-dialog footer .vs-button:last-of-type {
+  margin-left: .5rem !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.vs-avatar--text.feather {
+  font-size: 1.3rem;
+}
+
+/*=========================================================================================
+    File Name: _tailwindFixes.scss
+    Description: partial- Tailwind Fixes
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+button:focus {
+  outline: none;
+}
+
