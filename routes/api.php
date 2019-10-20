@@ -21,12 +21,7 @@ Route::group(['prefix' => 'v1'], function () use ($excepts) {
     Route::namespace('Api\v1')->middleware('auth:api')->group(function () use ($excepts) {
         Route::resource('profiles', 'ProfileController', ['except' => $excepts]);
         Route::resource('roles', 'RoleController', ['except' => $excepts]);
-
         Route::resource('users', 'UserController', ['except' => $excepts]);
-        Route::resource('companies', 'CompanyController', ['except' => $excepts]);
-        Route::resource('suppliers', 'SupplierController', ['except' => $excepts]);
-        Route::resource('invoices', 'InvoiceController', ['except' => $excepts]);
-        Route::resource('products', 'ProductController', ['except' => $excepts]);
     });
 });
 

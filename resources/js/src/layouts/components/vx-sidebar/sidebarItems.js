@@ -41,11 +41,4 @@ export default [
         icon: "UserCheckIcon",
         role: "profiles"
     },
-    {
-        url: "/products",
-        name: "Produts",
-        slug: "products",
-        icon: "GridIcon",
-        role: "products"
-    },
 ]

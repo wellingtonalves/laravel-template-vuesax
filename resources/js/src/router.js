@@ -148,54 +148,6 @@ const router = new Router({
                         }
                     ]
                 },
-                {
-                    path: '/products',
-                    component: () => import('./views/pages/RouterViewComponent.vue'),
-                    children: [
-                        {
-                            path: '',
-                            name: 'Products',
-                            component: () => import('./views/pages/Products/Products.vue'),
-                            meta: {
-                                title: 'Produts',
-                                requiresAuth: true,
-                                rule: 'products',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Produts', active: true},
-                                ],
-                            }
-                        },
-                        {
-                            path: '/products/create',
-                            component: () => import('./views/pages/Products/ProductsCreate.vue'),
-                            meta: {
-                                title: 'Novo produto',
-                                requiresAuth: true,
-                                rule: 'products-store',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Produts', url: '/products'},
-                                    {title: 'Novo produto', active: true},
-                                ],
-                            }
-                        },
-                        {
-                            path: '/products/:uuid/edit',
-                            component: () => import('./views/pages/Products/ProductsDetail.vue'),
-                            meta: {
-                                title: 'Detalhes do produto',
-                                requiresAuth: true,
-                                rule: 'products',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Produts', url: '/products'},
-                                    {title: 'Detalhes do produto', active: true},
-                                ],
-                            }
-                        }
-                    ]
-                },
             ],
         },
         {
@@ -248,10 +200,10 @@ router.beforeEach(async (to, from, next) => {
 
     await new Promise(resolve => {
         // Admin (is_admin) free access (change bootstrap.js)
-        // if (store.getters.isAdmin) {
-        //     resolve();
-        //     return;
-        // }
+        if (store.getters.isAdmin) {
+            resolve();
+            return;
+        }
         if (routeRule) {
             if (store.getters.userRoles.includes(routeRule)) {
                 resolve();

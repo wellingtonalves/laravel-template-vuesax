@@ -41,9 +41,9 @@ axios.interceptors.response.use(function (response) {
 
 window.checkPermission = function (rule) {
     //Admin(is_admin) free access (change router.js)
-    // if (!rule || store.default.getters.isAdmin) {
-    //     return true
-    // }
+    if (!rule || store.default.getters.isAdmin) {
+        return true
+    }
     return store.default.getters.userRoles.includes(rule);
 };
 
