@@ -15,14 +15,15 @@
   "license": "MIT",
   "require": {
     "php": "^7.1.3",
+    "barryvdh/laravel-cors": "^0.11.4",
+    "emadadly/laravel-uuid": "^1.2",
     "fideloper/proxy": "^4.0",
     "laravel/framework": "5.7.*",
-    "laravel/tinker": "^1.0",
     "laravel/passport": "^7.1",
+    "laravel/tinker": "^1.0",
+    "owen-it/laravel-auditing": "^8.0",
     "prettus/l5-repository": "^2.6",
-    "reddes/mappable-models": "master",
-    "emadadly/laravel-uuid": "^1.2",
-    "owen-it/laravel-auditing": "^8.0"
+    "reddes/mappable-models": "master"
   },
   "require-dev": {
     "beyondcode/laravel-dump-server": "^1.0",
