@@ -16,12 +16,18 @@
                             <thead>
                             <tr>
                                 <td>Nome</td>
+                                <td>E-mail</td>
+                                <td>CPF</td>
+                                <td>Telefone</td>
                                 <td class="text-right"></td>
                             </tr>
                             </thead>
                             <tbody>
                             <tr v-for="item in data" :key="item.id">
                                 <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.cpf}}</td>
+                                <td>{{item.phone}}</td>
                                 <td class="text-right">
                                     <button v-if="!permission('clients-edit') && permission('clients-view')"
                                             @click="editUser(item.uuid)" type="button" class="btn btn-info btn-sm">

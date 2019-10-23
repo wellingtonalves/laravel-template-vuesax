@@ -3,15 +3,49 @@
         <form @submit.prevent="save" class="needs-validation" novalidate v-if="permission">
             <div class="form-row">
                 <div class="col-md-6 mb-3">
-                    <label for="name">Name</label>
+                    <label for="name">Nome</label>
                     <input type="text" :class="['form-control', isFieldValid('name') ]" v-model="dataResponse.name"
                            id="name"
-                           placeholder="Digite o nome "
+                           placeholder="Digite o nome"
                            required>
                     <div class="invalid-feedback">
                         {{errorData.name}}
                     </div>
-                </div>            
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="name">E-mail</label>
+                    <input type="email" :class="['form-control', isFieldValid('email') ]" v-model="dataResponse.email"
+                           id="email"
+                           placeholder="Digite o e-mail"
+                           required>
+                    <div class="invalid-feedback">
+                        {{errorData.email}}
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="name">CPF</label>
+                    <input type="text" :class="['form-control', isFieldValid('cpf') ]" v-model="dataResponse.cpf"
+                           id="cpf"
+                           placeholder="Digite o CPF"
+                           required>
+                    <div class="invalid-feedback">
+                        {{errorData.cpf}}
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="name">Telefone</label>
+                    <input type="text" :class="['form-control', isFieldValid('phone') ]" v-model="dataResponse.phone"
+                           id="phone"
+                           placeholder="Digite o telefone"
+                           required>
+                    <div class="invalid-feedback">
+                        {{errorData.phone}}
+                    </div>
+                </div>
+
             </div>
             <slot name="buttons"></slot>
         </form>
