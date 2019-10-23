@@ -20,7 +20,7 @@ class UserDefaultSeeder extends Seeder
             'remember_token' => null,
             'is_admin' => 1,
             'profile_id' => 1,
-            'status' => 'active',
+            'status' => 'ativo',
         ]);
     }
 }

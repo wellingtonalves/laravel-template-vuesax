@@ -15,6 +15,7 @@ class CreateUfTable extends Migration
     {
         Schema::create('uf', function (Blueprint $table) {
             $table->char('sg_uf',2);
+            $table->uuid('uuid');
             $table->string('tx_nome_uf',50);
             $table->timestamps();
             $table->primary('sg_uf');
