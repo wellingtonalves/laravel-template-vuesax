@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddKeysToUsersTable extends Migration
+class AddKeysToAttachmentRepresentativeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddKeysToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('profile_id')->references('id')->on('profiles');
-            $table->foreign('client_id')->references('id')->on('client');
+        Schema::table('attachment_representative', function (Blueprint $table) {
+            $table->foreign('attachment_id')->references('id')->on('attachment');
             $table->foreign('representative_id')->references('id')->on('representative');
         });
     }
@@ -27,9 +26,8 @@ class AddKeysToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('profile_id');
-            $table->dropForeign('client_id');
+        Schema::table('attachment_to_user', function (Blueprint $table) {
+            $table->dropForeign('attachment_id');
             $table->dropForeign('representative_id');
         });
     }
