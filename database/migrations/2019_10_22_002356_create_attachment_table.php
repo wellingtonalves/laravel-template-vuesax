@@ -18,7 +18,9 @@ class CreateAttachmentTable extends Migration
             $table->uuid('uuid');
             $table->string('attachment_name');
             $table->string('attachment_path');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

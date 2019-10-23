@@ -18,7 +18,9 @@ class CreateAddressesClientTable extends Migration
             $table->uuid('uuid');
             $table->integer('address_id');
             $table->integer('client_id');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

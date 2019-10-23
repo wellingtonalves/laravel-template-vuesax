@@ -29,6 +29,7 @@ class CreateAddressTable extends Migration
             $table->integer('longitude')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

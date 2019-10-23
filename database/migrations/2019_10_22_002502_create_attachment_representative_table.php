@@ -18,7 +18,9 @@ class CreateAttachmentRepresentativeTable extends Migration
             $table->uuid('uuid');
             $table->integer('attachment_id');
             $table->integer('representative_id');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
