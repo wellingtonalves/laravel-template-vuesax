@@ -15,7 +15,7 @@
                 <div slot="no-body" class="full-page-bg-color">
                     <div class="row justify-content-md-center">
                         <div class="col d-none d-lg-block mx-auto self-center">
-                            <img src="@assets/images/pages/login.png" alt="login" class="mx-auto">
+                            <img src="@assets/images/pages/logo-login.jpeg" alt="login" class="mx-auto">
                         </div>
                         <div class="col mx-auto self-center d-theme-dark-bg">
                             <div class="p-8">

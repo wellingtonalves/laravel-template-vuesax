@@ -395,7 +395,7 @@ var staticRenderFns = [
         _c("img", {
           staticClass: "mx-auto",
           attrs: {
-            src: __webpack_require__(/*! @assets/images/pages/login.png */ "./resources/assets/images/pages/login.png"),
+            src: __webpack_require__(/*! @assets/images/pages/logo-login.jpeg */ "./resources/assets/images/pages/logo-login.jpeg"),
             alt: "login"
           }
         })
@@ -417,14 +417,14 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/assets/images/pages/login.png":
-/*!*************************************************!*\
-  !*** ./resources/assets/images/pages/login.png ***!
-  \*************************************************/
+/***/ "./resources/assets/images/pages/logo-login.jpeg":
+/*!*******************************************************!*\
+  !*** ./resources/assets/images/pages/logo-login.jpeg ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/login.png?d814adb752d2d047b8292d6de603025f";
+module.exports = "/images/logo-login.jpeg?1a4bfbb8f9e6caf05b1c7d78ef4c0794";
 
 /***/ }),
 
