@@ -8,6 +8,7 @@ class RoleTableSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws Exception
      */
     public function run()
     {
@@ -35,6 +36,13 @@ class RoleTableSeeder extends Seeder
             ['id' => 14, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'products-view', 'description' => 'Produtos - visualizar', 'page' => 'Produtos'],
             ['id' => 15, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'products-destroy', 'description' => 'Produtos - deletar', 'page' => 'Produtos'],
             ['id' => 16, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'products-store', 'description' => 'Produtos - incluir', 'page' => 'Produtos'],
+
+            //CLIENTS
+            ['id' => 17, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients', 'description' => 'Clientes - lista', 'page' => 'Clientes'],
+            ['id' => 18, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-edit', 'description' => 'Clientes - editar ', 'page' => 'Clientes'],
+            ['id' => 19, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-view', 'description' => 'Clientes - visualizar', 'page' => 'Clientes'],
+            ['id' => 20, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-destroy', 'description' => 'Clientes - deletar', 'page' => 'Clientes'],
+            ['id' => 21, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-store', 'description' => 'Clientes - incluir', 'page' => 'Clientes'],
         ];
 
         foreach ($roles as $role) {

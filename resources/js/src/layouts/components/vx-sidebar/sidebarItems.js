@@ -41,4 +41,11 @@ export default [
         icon: "UserCheckIcon",
         role: "profiles"
     },
+    {
+        url: "/clients",
+        name: "Clientes",
+        slug: "client",
+        icon: "UserIcon",
+        role: "clients"
+    },
 ]

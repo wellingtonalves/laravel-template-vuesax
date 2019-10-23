@@ -15,7 +15,7 @@ class AddKeysToAddressesClientTable extends Migration
     {
         Schema::table('addresses_client', function (Blueprint $table) {
             $table->foreign('address_id')->references('id')->on('address');
-            $table->foreign('client_id')->references('id')->on('client');
+            $table->foreign('client_id')->references('id')->on('clients');
         });
     }
 

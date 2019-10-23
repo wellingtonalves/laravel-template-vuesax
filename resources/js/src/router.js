@@ -148,6 +148,54 @@ const router = new Router({
                         }
                     ]
                 },
+                {
+                    path: '/clients',
+                    component: () => import('./views/pages/RouterViewComponent.vue'),
+                    children: [
+                        {
+                            path: '',
+                            name: 'Clients',
+                            component: () => import('./views/pages/Clients/Clients.vue'),
+                            meta: {
+                                title: 'Clientes',
+                                requiresAuth: true,
+                                rule: 'clients',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/clients/create',
+                            component: () => import('./views/pages/Clients/ClientsCreate.vue'),
+                            meta: {
+                                title: 'Novo cliente',
+                                requiresAuth: true,
+                                rule: 'clients-store',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', url: '/clients'},
+                                    {title: 'Novo cliente', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/clients/:uuid/edit',
+                            component: () => import('./views/pages/Clients/ClientsDetail.vue'),
+                            meta: {
+                                title: 'Detalhes do cliente',
+                                requiresAuth: true,
+                                rule: 'clients',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', url: '/clients'},
+                                    {title: 'Detalhes do Cliente', active: true},
+                                ],
+                            }
+                        }
+                    ]
+                },
             ],
         },
         {

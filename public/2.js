@@ -3322,11 +3322,11 @@ __webpack_require__.r(__webpack_exports__);
   icon: "UserCheckIcon",
   role: "profiles"
 }, {
-  url: "/products",
-  name: "Produts",
-  slug: "products",
-  icon: "GridIcon",
-  role: "products"
+  url: "/clients",
+  name: "Clientes",
+  slug: "client",
+  icon: "UserIcon",
+  role: "clients"
 }]);
 
 /***/ }),

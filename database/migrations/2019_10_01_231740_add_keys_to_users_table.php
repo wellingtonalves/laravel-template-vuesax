@@ -15,7 +15,7 @@ class AddKeysToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('profile_id')->references('id')->on('profiles');
-            $table->foreign('client_id')->references('id')->on('client');
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->foreign('representative_id')->references('id')->on('representative');
         });
     }
