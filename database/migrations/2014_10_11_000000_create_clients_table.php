@@ -18,7 +18,8 @@ class CreateClientsTable extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('cpf')->unique();
+            $table->string('cpf', 11)->unique();
+            $table->string('phone', 15);
 
             $table->timestamps();
             $table->softDeletes();

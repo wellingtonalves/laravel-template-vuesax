@@ -16,7 +16,8 @@ class Client extends AbstractModel
         'uuid',
         'name',
         'email',
-        'cpf'
+        'cpf',
+        'phone'
     ];
 
     /**

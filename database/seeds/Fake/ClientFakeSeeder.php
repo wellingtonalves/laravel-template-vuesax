@@ -17,7 +17,8 @@ class ClientFakeSeeder extends Seeder
                 'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
                 'name' => 'Alex',
                 'email' => 'alexalexandrejr@gmail.com',
-                'cpf' => '1313313123'
+                'cpf' => '1313313123',
+                'phone' => '1234567891'
             ]
         ];
 
