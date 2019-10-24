@@ -14,8 +14,8 @@ class AddKeysToAttachmentRepresentativeTable extends Migration
     public function up()
     {
         Schema::table('attachment_representative', function (Blueprint $table) {
-            $table->foreign('attachment_id', 'fk_attaach_id')->references('id')->on('attachment');
-            $table->foreign('representative_id', 'fk_repres_id')->references('id')->on('representatives');
+//            $table->foreign('attachment_id', 'fk_attaach_id')->references('id')->on('attachment');
+//            $table->foreign('representative_id', 'fk_repres_id')->references('id')->on('representatives');
         });
     }
 
