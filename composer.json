@@ -23,7 +23,8 @@
         "laravel/tinker": "^1.0",
         "owen-it/laravel-auditing": "^8.0",
         "prettus/l5-repository": "^2.6",
-        "reddes/mappable-models": "master"
+        "reddes/mappable-models": "master",
+        "laravellegends/pt-br-validator": "^5.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

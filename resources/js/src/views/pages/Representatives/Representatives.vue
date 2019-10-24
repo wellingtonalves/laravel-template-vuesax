@@ -26,8 +26,8 @@
                             <tr v-for="item in data" :key="item.id">
                                 <td>{{item.name}}</td>
                                 <td>{{item.email}}</td>
-                                <td>{{item.cnpj}}</td>
-                                <td>{{item.phone}}</td>
+                                <td v-mask="'##.###.###/####-##'">{{item.cnpj}}</td>
+                                <td v-mask="'(##) #####-####'">{{item.phone}}</td>
                                 <td class="text-right">
                                     <button v-if="!permission('representatives-edit') && permission('representatives-view')"
                                             @click="editUser(item.uuid)" type="button" class="btn btn-info btn-sm">

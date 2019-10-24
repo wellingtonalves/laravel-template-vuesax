@@ -27,10 +27,11 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="name">CNPJ</label>
-                    <input type="text" :class="['form-control', isFieldValid('cpf') ]" v-model="dataResponse.cnpj"
-                           id="cnpj"
-                           placeholder="Digite o CNPJ"
-                           required>
+                    <the-mask :mask="['##.###.###/####-##']"
+                              type="text" :class="['form-control', isFieldValid('cnpj') ]" v-model="dataResponse.cnpj"
+                              id="cnpj"
+                              placeholder="Digite o CNPJ"
+                              required/>
                     <div class="invalid-feedback">
                         {{errorData.cnpj}}
                     </div>
@@ -38,10 +39,12 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="name">Telefone</label>
-                    <input type="text" :class="['form-control', isFieldValid('phone') ]" v-model="dataResponse.phone"
-                           id="phone"
-                           placeholder="Digite o telefone"
-                           required>
+                    <the-mask :mask="['(##) #####-####']"
+                              type="text" :class="['form-control', isFieldValid('phone') ]" v-model="dataResponse.phone"
+                              id="phone"
+                              placeholder="Digite o telefone"
+                              required
+                              required/>
                     <div class="invalid-feedback">
                         {{errorData.phone}}
                     </div>

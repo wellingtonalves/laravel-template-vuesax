@@ -111,6 +111,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "representativesForm",
   props: ['data', 'errors'],
@@ -271,83 +274,76 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 mb-3" }, [
-                _c("label", { attrs: { for: "name" } }, [_vm._v("CNPJ")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
+              _c(
+                "div",
+                { staticClass: "col-md-6 mb-3" },
+                [
+                  _c("label", { attrs: { for: "name" } }, [_vm._v("CNPJ")]),
+                  _vm._v(" "),
+                  _c("the-mask", {
+                    class: ["form-control", _vm.isFieldValid("cnpj")],
+                    attrs: {
+                      mask: ["##.###.###/####-##"],
+                      type: "text",
+                      id: "cnpj",
+                      placeholder: "Digite o CNPJ",
+                      required: ""
+                    },
+                    model: {
                       value: _vm.dataResponse.cnpj,
+                      callback: function($$v) {
+                        _vm.$set(_vm.dataResponse, "cnpj", $$v)
+                      },
                       expression: "dataResponse.cnpj"
                     }
-                  ],
-                  class: ["form-control", _vm.isFieldValid("cpf")],
-                  attrs: {
-                    type: "text",
-                    id: "cnpj",
-                    placeholder: "Digite o CNPJ",
-                    required: ""
-                  },
-                  domProps: { value: _vm.dataResponse.cnpj },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.dataResponse, "cnpj", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "invalid-feedback" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.errorData.cnpj) +
-                      "\n                    "
-                  )
-                ])
-              ]),
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invalid-feedback" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.errorData.cnpj) +
+                        "\n                    "
+                    )
+                  ])
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 mb-3" }, [
-                _c("label", { attrs: { for: "name" } }, [_vm._v("Telefone")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
+              _c(
+                "div",
+                { staticClass: "col-md-6 mb-3" },
+                [
+                  _c("label", { attrs: { for: "name" } }, [_vm._v("Telefone")]),
+                  _vm._v(" "),
+                  _c("the-mask", {
+                    class: ["form-control", _vm.isFieldValid("phone")],
+                    attrs: {
+                      mask: ["(##) #####-####"],
+                      type: "text",
+                      id: "phone",
+                      placeholder: "Digite o telefone",
+                      required: "",
+                      required: ""
+                    },
+                    model: {
                       value: _vm.dataResponse.phone,
+                      callback: function($$v) {
+                        _vm.$set(_vm.dataResponse, "phone", $$v)
+                      },
                       expression: "dataResponse.phone"
                     }
-                  ],
-                  class: ["form-control", _vm.isFieldValid("phone")],
-                  attrs: {
-                    type: "text",
-                    id: "phone",
-                    placeholder: "Digite o telefone",
-                    required: ""
-                  },
-                  domProps: { value: _vm.dataResponse.phone },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.dataResponse, "phone", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "invalid-feedback" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.errorData.phone) +
-                      "\n                    "
-                  )
-                ])
-              ])
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invalid-feedback" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.errorData.phone) +
+                        "\n                    "
+                    )
+                  ])
+                ],
+                1
+              )
             ]),
             _vm._v(" "),
             _c("hr"),

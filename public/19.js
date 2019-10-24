@@ -208,9 +208,35 @@ var render = function() {
                               _vm._v(" "),
                               _c("td", [_vm._v(_vm._s(item.email))]),
                               _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(item.cnpj))]),
+                              _c(
+                                "td",
+                                {
+                                  directives: [
+                                    {
+                                      name: "mask",
+                                      rawName: "v-mask",
+                                      value: "##.###.###/####-##",
+                                      expression: "'##.###.###/####-##'"
+                                    }
+                                  ]
+                                },
+                                [_vm._v(_vm._s(item.cnpj))]
+                              ),
                               _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(item.phone))]),
+                              _c(
+                                "td",
+                                {
+                                  directives: [
+                                    {
+                                      name: "mask",
+                                      rawName: "v-mask",
+                                      value: "(##) #####-####",
+                                      expression: "'(##) #####-####'"
+                                    }
+                                  ]
+                                },
+                                [_vm._v(_vm._s(item.phone))]
+                              ),
                               _vm._v(" "),
                               _c("td", { staticClass: "text-right" }, [
                                 !_vm.permission("representatives-edit") &&

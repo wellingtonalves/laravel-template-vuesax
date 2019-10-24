@@ -26,10 +26,11 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="name">CPF</label>
-                    <input type="text" :class="['form-control', isFieldValid('cpf') ]" v-model="dataResponse.cpf"
-                           id="cpf"
-                           placeholder="Digite o CPF"
-                           required>
+                    <the-mask :mask="['###.###.###-##']"
+                              type="text" :class="['form-control', isFieldValid('cpf') ]" v-model="dataResponse.cpf"
+                              id="cpf"
+                              placeholder="Digite o CPF"
+                              required/>
                     <div class="invalid-feedback">
                         {{errorData.cpf}}
                     </div>
@@ -37,10 +38,12 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="name">Telefone</label>
-                    <input type="text" :class="['form-control', isFieldValid('phone') ]" v-model="dataResponse.phone"
-                           id="phone"
-                           placeholder="Digite o telefone"
-                           required>
+                    <the-mask :mask="['(##) #####-####']"
+                              type="text" :class="['form-control', isFieldValid('phone') ]" v-model="dataResponse.phone"
+                              id="phone"
+                              placeholder="Digite o telefone"
+                              required
+                              required/>
                     <div class="invalid-feedback">
                         {{errorData.phone}}
                     </div>

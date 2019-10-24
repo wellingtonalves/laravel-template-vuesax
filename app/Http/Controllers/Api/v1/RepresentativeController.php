@@ -4,9 +4,10 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\AbstractController;
+use App\Http\Requests\RepresentativeRequest;
 use App\Models\Representative;
 use App\Services\RepresentativeService;
-use Illuminate\Http\Request;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class RepresentativeController extends AbstractController
 {
@@ -20,24 +21,24 @@ class RepresentativeController extends AbstractController
         $this->model = Representative::class;
     }
 
-     /**
-         * @param Request $request
-         * @return mixed
-         * @throws \Illuminate\Auth\Access\AuthorizationException
-         */
-        public function store(Request $request)
-        {
-            return parent::save($request);
-        }
+    /**
+     * @param RepresentativeRequest $request
+     * @return mixed
+     * @throws AuthorizationException
+     */
+    public function store(RepresentativeRequest $request)
+    {
+        return parent::save($request);
+    }
 
-        /**
-         * @param Request $request
-         * @param $id
-         * @return mixed
-         * @throws \Illuminate\Auth\Access\AuthorizationException
-         */
-        public function update(Request $request, $id)
-        {
-            return parent::updateAs($request, $id);
-        }
+    /**
+     * @param RepresentativeRequest $request
+     * @param $id
+     * @return mixed
+     * @throws AuthorizationException
+     */
+    public function update(RepresentativeRequest $request, $id)
+    {
+        return parent::updateAs($request, $id);
+    }
 }
