@@ -98,14 +98,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "representativesForm",
   props: ['data', 'errors'],
   data: function data() {
     return {
-      dataResponse: this.data || {},
+      dataResponse: this.data || {
+        user: {}
+      },
       permission: checkPermission('representatives-edit'),
-      errorData: {}
+      errorData: {
+        user: {}
+      },
+      profiles: []
     };
   },
   watch: {
@@ -116,6 +134,9 @@ __webpack_require__.r(__webpack_exports__);
       this.errorData = val;
       this.isFieldValid;
     }
+  },
+  mounted: function mounted() {
+    this.getProfiles();
   },
   methods: {
     save: function save($event) {
@@ -128,6 +149,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     isFieldValid: function isFieldValid(field) {
       return Object.keys(this.errorData).includes(field) ? 'is-invalid' : '';
+    },
+    getProfiles: function getProfiles() {
+      var _this = this;
+
+      axios.get('/api/v1/profiles?pagination=false').then(function (response) {
+        _this.profiles = response.data.data;
+      })["catch"](function (error) {});
     }
   }
 });
@@ -166,7 +194,7 @@ var render = function() {
           [
             _c("div", { staticClass: "form-row" }, [
               _c("div", { staticClass: "col-md-6 mb-3" }, [
-                _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+                _c("label", { attrs: { for: "name" } }, [_vm._v("Nome")]),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -181,7 +209,7 @@ var render = function() {
                   attrs: {
                     type: "text",
                     id: "name",
-                    placeholder: "Digite o nome ",
+                    placeholder: "Digite o nome",
                     required: ""
                   },
                   domProps: { value: _vm.dataResponse.name },
@@ -363,6 +391,112 @@ var render = function() {
                   _vm._v(
                     "\n                        " +
                       _vm._s(_vm.errorData.user.username) +
+                      "\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 mb-3" }, [
+                _c("label", { attrs: { for: "name" } }, [_vm._v("Senha")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.dataResponse.user.password,
+                      expression: "dataResponse.user.password"
+                    }
+                  ],
+                  class: ["form-control", _vm.isFieldValid("password")],
+                  attrs: {
+                    type: "password",
+                    id: "password",
+                    placeholder: "Digite a senha",
+                    required: ""
+                  },
+                  domProps: { value: _vm.dataResponse.user.password },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.dataResponse.user,
+                        "password",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.errorData.user.password) +
+                      "\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4 mb-3" }, [
+                _c("label", { attrs: { for: "profile_id" } }, [
+                  _vm._v("Perfil")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.dataResponse.user.profile_id,
+                        expression: "dataResponse.user.profile_id"
+                      }
+                    ],
+                    class: ["form-control", _vm.isFieldValid("profile_id")],
+                    attrs: { id: "profile_id", required: "" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.dataResponse.user,
+                          "profile_id",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c("option", { attrs: { value: "null" } }, [
+                      _vm._v("Selecione")
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.profiles, function(item) {
+                      return _c(
+                        "option",
+                        { key: item.id, domProps: { value: item.id } },
+                        [_vm._v(_vm._s(item.name))]
+                      )
+                    })
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.errorData.user.profile_id) +
                       "\n                    "
                   )
                 ])
