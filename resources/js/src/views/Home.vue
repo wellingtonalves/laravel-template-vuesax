@@ -6,7 +6,7 @@
                 <div class=" w-full pb-2">
                     <h5 class="card-title w-full">Home</h5>
 
-                    <p>Dashboard</p>
+                    <p>Dashboard 2</p>
                 </div>
             </div>
         </div>
