@@ -26,7 +26,7 @@ class AddKeysToAddressesClientTable extends Migration
      */
     public function down()
     {
-        Schema::table('addresses_to_user', function (Blueprint $table) {
+        Schema::table('addresses_client', function (Blueprint $table) {
             $table->dropForeign('address_id');
             $table->dropForeign('client_id');
         });
