@@ -48,4 +48,11 @@ export default [
         icon: "UserIcon",
         role: "clients"
     },
+    {
+        url: "/representatives",
+        name: "Representantes",
+        slug: "representative",
+        icon: "UserIcon",
+        role: "representatives"
+    },
 ]

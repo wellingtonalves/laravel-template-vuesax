@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ClientFakeSeeder extends Seeder
+class RepresentativeFakeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,15 +15,15 @@ class ClientFakeSeeder extends Seeder
         $client = [
             [
                 'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
-                'name' => 'Alex Cliente',
+                'name' => 'Alex Representante',
                 'email' => 'alexalexandrejr@gmail.com',
-                'cpf' => '1313313123',
+                'cnpj' => '1313313123',
                 'phone' => '1234567891'
             ]
         ];
 
         foreach ($client as $item) {
-            \App\Models\Client::create($item);
+            \App\Models\Representative::create($item);
         }
     }
 }

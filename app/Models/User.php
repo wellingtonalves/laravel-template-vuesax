@@ -127,6 +127,14 @@ class User extends Authenticatable implements Auditable
         return $this->belongsTo(Client::class);
     }
 
+    /**
+     * @return BelongsTo
+     */
+    public function representative()
+    {
+        return $this->belongsTo(Representative::class);
+    }
+
     public function getTipoUsuarioAttribute()
     {
         return $this->is_admin ? 'Admin' : 'Usuário';

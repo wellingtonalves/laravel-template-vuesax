@@ -41,6 +41,13 @@ class ProfileRoleTableSeeder extends Seeder
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 20, 'profile_id' => 1],
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 21, 'profile_id' => 1],
 
+//            REPRESENTATIVES
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 22, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 23, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 24, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 25, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 26, 'profile_id' => 1],
+
             //USER
 //            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 1, 'profile_id' => 2],
 //            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 3, 'profile_id' => 2],

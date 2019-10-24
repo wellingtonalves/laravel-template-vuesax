@@ -43,6 +43,13 @@ class RoleTableSeeder extends Seeder
             ['id' => 19, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-view', 'description' => 'Clientes - visualizar', 'page' => 'Clientes'],
             ['id' => 20, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-destroy', 'description' => 'Clientes - deletar', 'page' => 'Clientes'],
             ['id' => 21, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'clients-store', 'description' => 'Clientes - incluir', 'page' => 'Clientes'],
+
+            //REPRESENTATIVES
+            ['id' => 22, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'representatives', 'description' => 'Representantes - lista', 'page' => 'Representantes'],
+            ['id' => 23, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'representatives-edit', 'description' => 'Representantes - editar ', 'page' => 'Representantes'],
+            ['id' => 24, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'representatives-view', 'description' => 'Representantes - visualizar', 'page' => 'Representantes'],
+            ['id' => 25, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'representatives-destroy', 'description' => 'Representantes - deletar', 'page' => 'Representantes'],
+            ['id' => 26, 'uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'name' => 'representatives-store', 'description' => 'Representantes - incluir', 'page' => 'Representantes'],
         ];
 
         foreach ($roles as $role) {

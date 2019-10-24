@@ -3327,6 +3327,12 @@ __webpack_require__.r(__webpack_exports__);
   slug: "client",
   icon: "UserIcon",
   role: "clients"
+}, {
+  url: "/representatives",
+  name: "Representantes",
+  slug: "representative",
+  icon: "UserIcon",
+  role: "representatives"
 }]);
 
 /***/ }),
