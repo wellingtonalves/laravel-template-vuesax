@@ -12,7 +12,7 @@ class RepresentativeFakeSeeder extends Seeder
      */
     public function run()
     {
-        $client = [
+        $representative = [
             [
                 'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
                 'name' => 'Alex Representante',
@@ -22,8 +22,27 @@ class RepresentativeFakeSeeder extends Seeder
             ]
         ];
 
-        foreach ($client as $item) {
+        $representativeUser = [
+            [
+                'name' => 'Alex Representante',
+                'email' => 'alex@representative.com.br',
+                'username' => 'alex-representante',
+                'email_verified_at' => now(),
+                'password' => '123456',
+                'remember_token' => null,
+                'is_admin' => 0,
+                'profile_id' => 2,
+                'representative_id' => 1,
+                'status' => 'ativo',
+            ]
+        ];
+
+        foreach ($representative as $item) {
             \App\Models\Representative::create($item);
+        }
+
+        foreach ($representativeUser as $item) {
+            \App\Models\User::create($item);
         }
     }
 }

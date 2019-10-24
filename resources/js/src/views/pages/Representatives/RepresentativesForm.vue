@@ -47,6 +47,35 @@
                 </div>
 
             </div>
+
+            <hr>
+
+            <div class="form-row">
+
+                <div class="col-md-6 mb-3">
+                    <label for="name">UserName</label>
+                    <input type="text" :class="['form-control', isFieldValid('user.username') ]" v-model="dataResponse.user.username"
+                           id="username"
+                           placeholder="Digite o username"
+                           required>
+                    <div class="invalid-feedback">
+                        {{errorData.user.username}}
+                    </div>
+                </div>
+
+<!--                <div class="col-md-6 mb-3">-->
+<!--                    <label for="name">Senha</label>-->
+<!--                    <input type="password" :class="['form-control', isFieldValid('password') ]" v-model="dataResponse.user.password"-->
+<!--                           id="password"-->
+<!--                           placeholder="Digite a senha"-->
+<!--                           required>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        {{errorData.user.password}}-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+
             <slot name="buttons"></slot>
         </form>
 

@@ -69,6 +69,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "representativesForm",
   props: ['data', 'errors'],
@@ -168,9 +197,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n                        " +
                       _vm._s(_vm.errorData.name) +
-                      "\n                "
+                      "\n                    "
                   )
                 ])
               ]),
@@ -207,9 +236,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n                        " +
                       _vm._s(_vm.errorData.email) +
-                      "\n                "
+                      "\n                    "
                   )
                 ])
               ]),
@@ -246,9 +275,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n                        " +
                       _vm._s(_vm.errorData.cnpj) +
-                      "\n                "
+                      "\n                    "
                   )
                 ])
               ]),
@@ -285,9 +314,56 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "invalid-feedback" }, [
                   _vm._v(
-                    "\n                    " +
+                    "\n                        " +
                       _vm._s(_vm.errorData.phone) +
-                      "\n                "
+                      "\n                    "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c("div", { staticClass: "col-md-6 mb-3" }, [
+                _c("label", { attrs: { for: "name" } }, [_vm._v("UserName")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.dataResponse.user.username,
+                      expression: "dataResponse.user.username"
+                    }
+                  ],
+                  class: ["form-control", _vm.isFieldValid("user.username")],
+                  attrs: {
+                    type: "text",
+                    id: "username",
+                    placeholder: "Digite o username",
+                    required: ""
+                  },
+                  domProps: { value: _vm.dataResponse.user.username },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.dataResponse.user,
+                        "username",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "invalid-feedback" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.errorData.user.username) +
+                      "\n                    "
                   )
                 ])
               ])
