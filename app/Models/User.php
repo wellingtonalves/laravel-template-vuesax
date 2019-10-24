@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Notifications\SignupActivateNotification;
 use Emadadly\LaravelUuid\Uuids;
 use App\Notifications\PasswordResetRequestNotification;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -111,11 +112,27 @@ class User extends Authenticatable implements Auditable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function profile()
     {
         return $this->belongsTo(Profile::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function representative()
+    {
+        return $this->belongsTo(Representative::class);
     }
 
     public function getTipoUsuarioAttribute()

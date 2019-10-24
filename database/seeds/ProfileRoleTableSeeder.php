@@ -16,7 +16,7 @@ class ProfileRoleTableSeeder extends Seeder
             //DASHBOARD
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 6, 'profile_id' => 1],
 
-//            //ADMIN
+//           ADMIN
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 1, 'profile_id' => 1],
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 2, 'profile_id' => 1],
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 3, 'profile_id' => 1],
@@ -33,6 +33,20 @@ class ProfileRoleTableSeeder extends Seeder
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 14, 'profile_id' => 1],
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 15, 'profile_id' => 1],
             ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 16, 'profile_id' => 1],
+
+//            CLIENTS
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 17, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 18, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 19, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 20, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 21, 'profile_id' => 1],
+
+//            REPRESENTATIVES
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 22, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 23, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 24, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 25, 'profile_id' => 1],
+            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 26, 'profile_id' => 1],
 
             //USER
 //            ['uuid' => \Ramsey\Uuid\Uuid::uuid4(), 'role_id' => 1, 'profile_id' => 2],
