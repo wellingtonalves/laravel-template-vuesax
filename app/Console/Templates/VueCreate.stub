@@ -59,16 +59,19 @@
                 this.data = data;
             },
             save() {
-                axios.post('/api/v1/{{model}}/', this.data).then(response => {
+                axios.post('/api/v1/{{model}}', this.data).then(response => {
                     this.modalMessage = true;
                     this.modalMessageData = response.data.data;
                 }).catch(error => {
                     this.modalErrorMessage = true;
                     this.modalErrorData = error.response.data.data ||error.response.data.message;
                     const result = {};
-                    Object.keys(error.response.data.errors).filter(function (item) {
-                        result[item] = error.response.data.errors[item][0];
-                    });
+
+                    if(error.response.data.errors){
+                        Object.keys(error.response.data.errors).filter(function (item) {
+                            result[item] = error.response.data.errors[item][0];
+                        });
+                    }
                     this.errors = result
                 })
             },

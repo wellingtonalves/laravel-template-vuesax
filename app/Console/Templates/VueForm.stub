@@ -1,18 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="save" class="needs-validation" novalidate v-if="permission">
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="name">Name</label>
-                    <input type="text" :class="['form-control', isFieldValid('name') ]" v-model="dataResponse.name"
-                           id="name"
-                           placeholder="Digite o nome "
-                           required>
-                    <div class="invalid-feedback">
-                        {{errorData.name}}
-                    </div>
-                </div>            
-            </div>
+            {{formFields}}
             <slot name="buttons"></slot>
         </form>
 

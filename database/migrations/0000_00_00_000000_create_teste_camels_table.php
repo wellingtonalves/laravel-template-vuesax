@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Create{{nameClass}}Table extends Migration
+class CreateTesteCamelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class Create{{nameClass}}Table extends Migration
      */
     public function up()
     {
-        Schema::create('{{nameTable}}', function (Blueprint $table) {
+        Schema::create('teste_camels', function (Blueprint $table) {
             $table->increments('id');
             $table->uuid('uuid');
-            {{fields}}
+            $table->string('name');
+            $table->string('cpf');
+            $table->integer('age');
+            $table->timestamp('end_date');
+
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +33,6 @@ class Create{{nameClass}}Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('{{nameTable}}');
+        Schema::dropIfExists('teste_camels');
     }
 }

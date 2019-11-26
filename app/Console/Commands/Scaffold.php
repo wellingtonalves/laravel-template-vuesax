@@ -15,7 +15,6 @@ class Scaffold extends Command
      *
      * @var string
      */
-    protected $signature = 'scaffold:generate {--all= : Gera estrutura completa} {--controller= : Gera Controller} {--model= : Gera Model} {--repository= : Gera Repository}  {--dominio : Gera Dominio} {--v : Gerar views(Vue)}';
 
     /**
      * The console command description.
@@ -23,6 +22,24 @@ class Scaffold extends Command
      * @var string
      */
     protected $description = 'Gera Controller, Model, Repository, Service e etc.';
+
+    /**
+     * Fields to migrations and Vue forms
+     * @var string
+     */
+    private $fields;
+
+    protected $signature = 'scaffold:generate 
+    {--all= : Gera estrutura completa} 
+    {--controller= : Gera Controller} 
+    {--model= : Gera Model} 
+    {--repository= : Gera Repository} 
+    {--service= : Gera Service}
+    {--policy= : Gera Policy} 
+    {--dominio : Gera Dominio} 
+    {--views= : Gerar views(Vue)}
+    {--fields= : Campos para formularios e migrations}
+    ';
 
     /**
      * Create a new command instance.
@@ -43,8 +60,28 @@ class Scaffold extends Command
     {
         $args = $this->options();
         $this->options = $args;
+        $this->fields = $args['fields'] ?? '';
+
         if ($name = $args['all']) {
             return $this->generateAll($name);
+        }
+        if ($name = $args['controller']) {
+            return $this->controller($name);
+        }
+        if ($name = $args['model']) {
+            return $this->model($name);
+        }
+        if ($name = $args['repository']) {
+            return $this->repository($name);
+        }
+        if ($name = $args['service']) {
+            return $this->service($name);
+        }
+        if ($name = $args['policy']) {
+            return $this->policy($name);
+        }
+        if ($name = $args['views']) {
+            return $this->views($name);
         }
     }
 
@@ -84,6 +121,7 @@ class Scaffold extends Command
             'viewCreate' => app_path() . '/Console/Templates/VueCreate.stub',
             'viewDetail' => app_path() . '/Console/Templates/VueDetail.stub',
             'viewForm' => app_path() . '/Console/Templates/VueForm.stub',
+            'inputText' => app_path() . '/Console/Templates/InputTemplate.stub',
         ];
 
         return file_get_contents($templates[$type]);
@@ -221,21 +259,25 @@ class Scaffold extends Command
     public function views($name)
     {
         $this->output->writeln('Creating view(VueJs)...');
+        $formFields = $this->generateFieldsToView($this->fields);
+
         $vueIndexTemplate = str_replace(
             [
                 '{{model}}',
             ],
             [
-                str_plural(strtolower($name)),
+                $this->transformBebabPlural($name),
             ],
             $this->getStub('viewIndex')
         );
         $vueFormTemplate = str_replace(
             [
                 '{{model}}',
+                '{{formFields}}',
             ],
             [
-                str_plural(strtolower($name)),
+                $this->transformBebabPlural($name),
+                $formFields
             ],
             $this->getStub('viewForm')
         );
@@ -245,8 +287,8 @@ class Scaffold extends Command
                 '{{modelUpper}}',
             ],
             [
-                str_plural(strtolower($name)),
-                str_plural($name),
+                $this->transformBebabPlural($name),
+                Str::kebab(str_plural($name)),
             ],
             $this->getStub('viewCreate')
         );
@@ -256,8 +298,8 @@ class Scaffold extends Command
                 '{{modelUpper}}',
             ],
             [
-                str_plural(strtolower($name)),
-                str_plural($name),
+                $this->transformBebabPlural($name),
+                Str::kebab(str_plural($name)),
             ],
             $this->getStub('viewDetail')
         );
@@ -299,15 +341,18 @@ class Scaffold extends Command
         $this->output->writeln('Calling Post script..');
         $pluralized = snake_case(Str::plural($name));
         $pluralizedCamel = snake_case(Str::plural($name));
+        $fields = $this->generateFieldsToMigration($this->fields);
 
         $migrationCreateTemplate = str_replace(
             [
                 '{{nameClass}}',
                 '{{nameTable}}',
+                '{{fields}}',
             ],
             [
                 Str::plural($name),
                 $pluralizedCamel,
+                $fields
             ],
             $this->getStub('migration_create')
         );
@@ -316,6 +361,7 @@ class Scaffold extends Command
             [
                 '{{nameClass}}',
                 '{{nameTable}}',
+
             ],
             [
                 Str::plural($name),
@@ -329,5 +375,113 @@ class Scaffold extends Command
         file_put_contents(app_path("../database/migrations/{$date}_add_keys_to_{$pluralized}_table.php"), $migrationAlterTemplate);
 
         $this->output->writeln('Finalized.');
+    }
+
+    /**
+     * @param $fields
+     * @return string
+     */
+    public function generateFieldsToMigration($fields)
+    {
+        $typeFields = ['string', 'integer', 'unsignedInteger', 'timestamp', 'boolean'];
+
+        if (!$fields) {
+            return '';
+        }
+        $columns = '';
+        $parsedFields = explode(',', $fields);
+        foreach ($parsedFields as $field) {
+            $values = explode(':', $field);
+            $type = $values[1];
+            $column = $values[0];
+
+            if (!in_array($type, $typeFields)) {
+                $this->output->writeln('Tipo ' . $type . 'não permitido');
+            }
+            $columns .= '$table->' . $type . '(\'' . $column . '\');
+            ';// <--- New Line
+        }
+        return $columns;
+    }
+
+    public function generateFieldsToView($fields)
+    {
+        $typeFields = ['string', 'integer', 'unsignedInteger', 'timestamp', 'boolean'];
+
+        if (!$fields) {
+            return '';
+        }
+        $inputs = '';
+        $parsedFields = explode(',', $fields);
+        foreach ($parsedFields as $field) {
+            $values = explode(':', $field);
+            $type = $values[1];
+            $column = $values[0];
+
+            if (!in_array($type, $typeFields)) {
+                $this->output->writeln('Tipo ' . $type . 'não permitido');
+            }
+            $inputs .= $this->formBuilder($column, $type) . '
+            ';//<<-- new Line
+        }
+        return $inputs;
+
+    }
+
+    /**
+     * @param $data
+     * @return string
+     */
+    public function transformBebabPlural($data)
+    {
+        return Str::kebab(str_plural($data));
+    }
+
+    /**
+     * @param $column
+     * @param $type
+     * @return mixed
+     */
+    public function formBuilder($column, $type)
+    {
+        switch ($type) {
+            case 'string':
+                return $this->inputBuilder($column, 'text');
+                break;
+            case 'integer':
+                return $this->inputBuilder($column, 'number');
+                break;
+            case 'timestamp':
+                return $this->inputBuilder($column, 'date');
+                break;
+            default:
+                return $this->inputBuilder($column,'text');
+                break;
+        }
+    }
+
+    /**
+     * @param $column
+     * @param $type
+     * @return mixed
+     */
+    public function inputBuilder($column, $type)
+    {
+        $template = str_replace(
+            [
+                '{{field}}',
+                '{{label}}',
+                '{{type}}',
+
+            ],
+            [
+                $column,
+                ucfirst($column),
+                $type,
+            ],
+            $this->getStub('inputText')
+        );
+
+        return $template;
     }
 }

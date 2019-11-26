@@ -24,6 +24,7 @@ Route::group(['prefix' => 'v1'], function () use ($excepts) {
         Route::resource('users', 'UserController', ['except' => $excepts]);
         Route::resource('clients', 'ClientController', ['except' => $excepts]);
         Route::resource('representatives', 'RepresentativeController', ['except' => $excepts]);
+        Route::resource('testecamels', 'TesteCamelController', ['except' => $excepts]);
     });
 });
 

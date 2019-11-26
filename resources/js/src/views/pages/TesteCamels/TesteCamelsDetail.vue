@@ -5,12 +5,12 @@
             <div class="card-body" v-if="visible">
                 <h5 class="card-title">{{subtitle}}</h5>
                 <vs-divider></vs-divider>
-                <{{model}}-form :errors="errors" :data="data" @update="update">
+                <teste-camels-form :errors="errors" :data="data" @update="update">
                     <template v-slot:buttons>
                         <button class="btn btn-primary" @click="save" type="submit">Salvar</button>
-                        <button class="btn btn-danger" @click="goTo('/{{model}}')" type="submit">Cancelar</button>
+                        <button class="btn btn-danger" @click="goTo('/teste-camels')" type="submit">Cancelar</button>
                     </template>
-                </{{model}}-form>
+                </teste-camels-form>
             </div>
         </div>
 
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-    import {{modelUpper}}Form from './{{modelUpper}}Form';
+    import teste-camelsForm from './teste-camelsForm';
 
     export default {
-        name: "{{modelUpper}}Detail",
+        name: "teste-camelsDetail",
         components: {
-            {{modelUpper}}Form
+            teste-camelsForm
         },
         data() {
             return {
@@ -50,7 +50,7 @@
             modalMessage: function (val, newVal) {
                 let vm = this;
                 if (!val) {
-                    vm.goTo('/{{model}}')
+                    vm.goTo('/teste-camels')
                 }
             }
         },
@@ -59,7 +59,7 @@
         },
         methods: {
             getData(uuid) {
-                axios.get('/api/v1/{{model}}/' + uuid).then(response => {
+                axios.get('/api/v1/teste-camels/' + uuid).then(response => {
                     this.data = response.data.data;
                     this.subtitle = this.data.name || 'Novo registro';
                 }).then(() => {
@@ -75,7 +75,7 @@
                     delete this.data.password;
                 }
 
-                axios.put('/api/v1/{{model}}/' + this.uuid, this.data).then(response => {
+                axios.put('/api/v1/teste-camels/' + this.uuid, this.data).then(response => {
                     this.modalMessage = true;
                     this.modalMessageData = response.data.data;
                 }).catch(error => {

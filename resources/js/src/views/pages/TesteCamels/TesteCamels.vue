@@ -6,7 +6,7 @@
                 <div class="d-flex flex-row w-full pb-2">
                     <h5 class="card-title">Lista</h5>
                     <span class="ml-auto">
-                        <button v-if="permission('{{model}}-store')" @click="$router.push('/{{model}}/create')"
+                        <button v-if="permission('teste-camels-store')" @click="$router.push('/teste-camels/create')"
                                 class="btn btn-primary btn-sm">Novo</button>
                     </span>
                 </div>
@@ -24,13 +24,13 @@
                                 <td>{{item.name}}</td>
                                 <td class="text-right">
                                     <div class="inline-flex">
-                                        <button v-if="!permission('{{model}}-edit') && permission('{{model}}-view')"
+                                        <button v-if="!permission('teste-camels-edit') && permission('teste-camels-view')"
                                         @click="editUser(item.uuid)" type="button" class="btn btn-info btn-sm">Visualizar
                                         </button>
-                                        <button v-if="permission('{{model}}-edit')" @click="editUser(item.uuid)" type="button"
+                                        <button v-if="permission('teste-camels-edit')" @click="editUser(item.uuid)" type="button"
                                                 class="btn btn-primary btn-sm ml-2">Editar
                                         </button>
-                                        <button v-if="permission('{{model}}-destroy')" @click="deleteItem(item)" type="button"
+                                        <button v-if="permission('teste-camels-destroy')" @click="deleteItem(item)" type="button"
                                                 class="btn btn-danger btn-sm ml-2">Excluir
                                         </button>
                                     </div>
@@ -97,7 +97,7 @@
         },
         methods: {
             getAll(filtro = '') {
-                axios.get('/api/v1/{{model}}' + filtro).then(response => {
+                axios.get('/api/v1/teste-camels' + filtro).then(response => {
                     this.pagination = response.data;
                     this.data = response.data.data;
                 }).then(() => {
@@ -109,11 +109,11 @@
                 this.modalDelete = true;
             },
             editUser(uuid) {
-                this.$router.push(`/{{model}}/${uuid}/edit`);
+                this.$router.push(`/teste-camels/${uuid}/edit`);
             },
             sendDelete(uuid) {
                 this.modalDelete = false;
-                axios.delete('/api/v1/{{model}}/' + uuid).then(response => {
+                axios.delete('/api/v1/teste-camels/' + uuid).then(response => {
                     this.modalMessage = true;
                     this.modalMessageData = response.data.data;
                     this.getAll();

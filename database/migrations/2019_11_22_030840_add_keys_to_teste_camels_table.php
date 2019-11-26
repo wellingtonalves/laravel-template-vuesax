@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddKeysTo{{nameClass}}Table extends Migration
+class AddKeysToTesteCamelsTable extends Migration
 {
     /**
          * Run the migrations.
@@ -13,7 +13,7 @@ class AddKeysTo{{nameClass}}Table extends Migration
          */
         public function up()
         {
-            Schema::table('{{nameTable}}', function (Blueprint $table) {
+            Schema::table('teste_camels', function (Blueprint $table) {
                 //$table->foreign('')->references('id')->on('');
             });
         }
@@ -25,7 +25,7 @@ class AddKeysTo{{nameClass}}Table extends Migration
          */
         public function down()
         {
-            Schema::table('{{nameTable}}', function (Blueprint $table) {
+            Schema::table('teste_camels', function (Blueprint $table) {
                 //$table->dropForeign('');
             });
         }
