@@ -148,6 +148,102 @@ const router = new Router({
                         }
                     ]
                 },
+                {
+                    path: '/clients',
+                    component: () => import('./views/pages/RouterViewComponent.vue'),
+                    children: [
+                        {
+                            path: '',
+                            name: 'Clients',
+                            component: () => import('./views/pages/Clients/Clients.vue'),
+                            meta: {
+                                title: 'Clientes',
+                                requiresAuth: true,
+                                rule: 'clients',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/clients/create',
+                            component: () => import('./views/pages/Clients/ClientsCreate.vue'),
+                            meta: {
+                                title: 'Novo cliente',
+                                requiresAuth: true,
+                                rule: 'clients-store',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', url: '/clients'},
+                                    {title: 'Novo cliente', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/clients/:uuid/edit',
+                            component: () => import('./views/pages/Clients/ClientsDetail.vue'),
+                            meta: {
+                                title: 'Detalhes do cliente',
+                                requiresAuth: true,
+                                rule: 'clients',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Clientes', url: '/clients'},
+                                    {title: 'Detalhes do Cliente', active: true},
+                                ],
+                            }
+                        }
+                    ]
+                },
+                {
+                    path: '/representatives',
+                    component: () => import('./views/pages/RouterViewComponent.vue'),
+                    children: [
+                        {
+                            path: '',
+                            name: 'Representatives',
+                            component: () => import('./views/pages/Representatives/Representatives.vue'),
+                            meta: {
+                                title: 'Representantes',
+                                requiresAuth: true,
+                                rule: 'representatives',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Representantes', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/representatives/create',
+                            component: () => import('./views/pages/Representatives/RepresentativesCreate.vue'),
+                            meta: {
+                                title: 'Novo representante',
+                                requiresAuth: true,
+                                rule: 'representatives-store',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Representantes', url: '/representatives'},
+                                    {title: 'Novo representante', active: true},
+                                ],
+                            }
+                        },
+                        {
+                            path: '/representatives/:uuid/edit',
+                            component: () => import('./views/pages/Representatives/RepresentativesDetail.vue'),
+                            meta: {
+                                title: 'Detalhes do representante',
+                                requiresAuth: true,
+                                rule: 'representatives',
+                                breadcrumb: [
+                                    {title: 'Home', url: '/dashboard'},
+                                    {title: 'Representantes', url: '/clients'},
+                                    {title: 'Detalhes do representante', active: true},
+                                ],
+                            }
+                        }
+                    ]
+                },
             ],
         },
         {

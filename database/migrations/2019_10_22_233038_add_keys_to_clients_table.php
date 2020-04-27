@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddKeysToProductsTable extends Migration
+class AddKeysToClientsTable extends Migration
 {
     /**
          * Run the migrations.
@@ -13,7 +13,7 @@ class AddKeysToProductsTable extends Migration
          */
         public function up()
         {
-            Schema::table('products', function (Blueprint $table) {
+            Schema::table('clients', function (Blueprint $table) {
                 //$table->foreign('')->references('')->on('');
             });
         }
@@ -25,7 +25,7 @@ class AddKeysToProductsTable extends Migration
          */
         public function down()
         {
-            Schema::table('products', function (Blueprint $table) {
+            Schema::table('clients', function (Blueprint $table) {
                 //$table->dropForeign('');
             });
         }

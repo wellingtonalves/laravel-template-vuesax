@@ -17,5 +17,6 @@ class BootstrapTableSeeder extends Seeder
         $this->call(ProfileRoleTableSeeder::class); // Profiles
 
         $this->call(UserDefaultSeeder::class); // User Admin
+        $this->call(UfTableSeeder::class); // Unidades Federatias
     }
 }

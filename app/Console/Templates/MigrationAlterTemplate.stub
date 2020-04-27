@@ -14,7 +14,7 @@ class AddKeysTo{{nameClass}}Table extends Migration
         public function up()
         {
             Schema::table('{{nameTable}}', function (Blueprint $table) {
-                //$table->foreign('')->references('')->on('');
+                //$table->foreign('')->references('id')->on('');
             });
         }
 

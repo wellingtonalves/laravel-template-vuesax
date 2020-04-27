@@ -10,7 +10,7 @@
                                 class="btn btn-primary btn-sm">Novo</button>
                     </span>
                 </div>
-                <div class="table-responsive-sm">
+                <div class="table-responsive">
                     <div v-if="data.length">
                         <table class="table">
                             <thead>
@@ -23,16 +23,17 @@
                             <tr v-for="item in data" :key="item.id">
                                 <td>{{item.name}}</td>
                                 <td class="text-right">
-                                    <button v-if="!permission('{{model}}-edit') && permission('{{model}}-view')"
-                                            @click="editUser(item.uuid)" type="button" class="btn btn-info btn-sm">
-                                        Visualizar
-                                    </button>
-                                    <button v-if="permission('{{model}}-edit')" @click="editUser(item.uuid)" type="button"
-                                            class="btn btn-primary btn-sm">Editar
-                                    </button>
-                                    <button v-if="permission('{{model}}-destroy')" @click="deleteItem(item)" type="button"
-                                            class="btn btn-danger btn-sm">Excluir
-                                    </button>
+                                    <div class="inline-flex">
+                                        <button v-if="!permission('{{model}}-edit') && permission('{{model}}-view')"
+                                        @click="editUser(item.uuid)" type="button" class="btn btn-info btn-sm">Visualizar
+                                        </button>
+                                        <button v-if="permission('{{model}}-edit')" @click="editUser(item.uuid)" type="button"
+                                                class="btn btn-primary btn-sm ml-2">Editar
+                                        </button>
+                                        <button v-if="permission('{{model}}-destroy')" @click="deleteItem(item)" type="button"
+                                                class="btn btn-danger btn-sm ml-2">Excluir
+                                        </button>
+                                    </div>
                                 </td>
 
                             </tr>

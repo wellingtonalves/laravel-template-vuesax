@@ -3,9 +3,9 @@
 
 namespace App\Repositories;
 
-use App\Models\UserRole;
+use App\Models\Representative;
 
-class UserRoleRepository extends AbstractRepository
+class RepresentativeRepository extends AbstractRepository
 {
     /**
      * Relationships
@@ -28,6 +28,6 @@ class UserRoleRepository extends AbstractRepository
      */
     public function model()
     {
-        return UserRole::class;
+        return Representative::class;
     }
 }

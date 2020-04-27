@@ -1,0 +1,12 @@
+<div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="{{field}}">{{label}}</label>
+                    <input type="{{type}}" :class="['form-control', isFieldValid('{{field}}') ]" v-model="dataResponse.{{field}}"
+                           id="{{field}}"
+                           placeholder="Digite {{field}}"
+                           required>
+                    <div class="invalid-feedback">
+                        {{errorData['{{field}}']}}
+                    </div>
+                </div>
+            </div>

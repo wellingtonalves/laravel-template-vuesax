@@ -1,0 +1,64 @@
+________Deploy iniciado....
+________Clonando repositorio...
+The "public/storage" directory already exists.
+________Migrando as tabelas
+Dropped all tables successfully.
+Migration table created successfully.
+Migrating: 0000_00_00_000000_create_companies_table
+Migrated:  0000_00_00_000000_create_companies_table
+Migrating: 0000_00_00_000000_create_invoices_table
+Migrated:  0000_00_00_000000_create_invoices_table
+Migrating: 0000_00_00_000000_create_statuses_table
+Migrated:  0000_00_00_000000_create_statuses_table
+Migrating: 0000_00_00_000000_create_suppliers_table
+Migrated:  0000_00_00_000000_create_suppliers_table
+Migrating: 0000_00_00_000000_create_user_roles_table
+Migrated:  0000_00_00_000000_create_user_roles_table
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table
+Migrating: 2016_06_01_000001_create_oauth_auth_codes_table
+Migrated:  2016_06_01_000001_create_oauth_auth_codes_table
+Migrating: 2016_06_01_000002_create_oauth_access_tokens_table
+Migrated:  2016_06_01_000002_create_oauth_access_tokens_table
+Migrating: 2016_06_01_000003_create_oauth_refresh_tokens_table
+Migrated:  2016_06_01_000003_create_oauth_refresh_tokens_table
+Migrating: 2016_06_01_000004_create_oauth_clients_table
+Migrated:  2016_06_01_000004_create_oauth_clients_table
+Migrating: 2016_06_01_000004_create_profile_roles_table
+Migrated:  2016_06_01_000004_create_profile_roles_table
+Migrating: 2016_06_01_000005_create_oauth_personal_access_clients_table
+Migrated:  2016_06_01_000005_create_oauth_personal_access_clients_table
+Migrating: 2016_06_01_000005_create_profiles_table
+Migrated:  2016_06_01_000005_create_profiles_table
+Migrating: 2016_06_01_000005_create_roles_table
+Migrated:  2016_06_01_000005_create_roles_table
+Migrating: 2019_02_07_001452_create_audit_actions_table
+Migrated:  2019_02_07_001452_create_audit_actions_table
+Migrating: 2019_10_01_231740_add_keys_to_users_table
+Migrated:  2019_10_01_231740_add_keys_to_users_table
+Migrating: 2019_10_01_235245_add_keys_to_user_roles_table
+Migrated:  2019_10_01_235245_add_keys_to_user_roles_table
+Migrating: 2019_10_02_004452_create_audits_table
+Migrated:  2019_10_02_004452_create_audits_table
+Migrating: 2019_10_06_223833_add_keys_to_invoices_table
+Migrated:  2019_10_06_223833_add_keys_to_invoices_table
+Seeding: BootstrapTableSeeder
+Seeding: OauthClientsTableSeeder
+Seeding: RoleTableSeeder
+Seeding: ProfileTableSeeder
+Seeding: ProfileRoleTableSeeder
+Seeding: StatusesTableSeeder
+Seeding: UserDefaultSeeder
+Seeding: CompanyTableSeeder
+Database seeding completed successfully.
+________Gerando build...
+
+> @ dev /var/www/cpd.reddes.com.br
+> npm run development
+
+
+> @ development /var/www/cpd.reddes.com.br
+> cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js
+

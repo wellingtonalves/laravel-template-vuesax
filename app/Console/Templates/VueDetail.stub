@@ -82,9 +82,11 @@
                     this.modalErrorMessage = true;
                     this.modalErrorData = error.response.data.data ||error.response.data.message;
                     const result = {};
-                    Object.keys(error.response.data.errors).filter(function (item) {
-                        result[item] = error.response.data.errors[item][0];
-                    });
+                    if(error.response.data.errors){
+                        Object.keys(error.response.data.errors).filter(function (item) {
+                            result[item] = error.response.data.errors[item][0];
+                        });
+                    }
                     this.errors = result
                 })
             },

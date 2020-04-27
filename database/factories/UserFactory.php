@@ -21,7 +21,7 @@ $factory->define(\App\Models\User::class, function (Faker $faker) {
         'email_verified_at' => null,
         'password' => '123456',
         'remember_token' => null,
-        'status' => 'active',
+        'status' => 'ativo',
         'is_admin' => 0,
         'username' => strtolower($faker->firstName),
         'profile_id' => 2,
