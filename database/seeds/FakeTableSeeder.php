@@ -13,6 +13,5 @@ class FakeTableSeeder extends Seeder
     {
         $this->call(UserFakeSeeder::class);
         $this->call(ClientFakeSeeder::class);
-        $this->call(RepresentativeFakeSeeder::class);
     }
 }

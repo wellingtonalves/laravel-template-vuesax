@@ -3,7 +3,7 @@
                     <label for="{{field}}">{{label}}</label>
                     <input type="{{type}}" :class="['form-control', isFieldValid('{{field}}') ]" v-model="dataResponse.{{field}}"
                            id="{{field}}"
-                           placeholder="Digite {{field}}"
+                           placeholder="Digite {{label}}"
                            required>
                     <div class="invalid-feedback">
                         {{errorData['{{field}}']}}

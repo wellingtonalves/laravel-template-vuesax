@@ -29,14 +29,14 @@ class Scaffold extends Command
      */
     private $fields;
 
-    protected $signature = 'scaffold:generate 
-    {--all= : Gera estrutura completa} 
-    {--controller= : Gera Controller} 
-    {--model= : Gera Model} 
-    {--repository= : Gera Repository} 
+    protected $signature = 'scaffold:generate
+    {--all= : Gera estrutura completa}
+    {--controller= : Gera Controller}
+    {--model= : Gera Model}
+    {--repository= : Gera Repository}
     {--service= : Gera Service}
-    {--policy= : Gera Policy} 
-    {--dominio : Gera Dominio} 
+    {--policy= : Gera Policy}
+    {--dominio : Gera Dominio}
     {--views= : Gerar views(Vue)}
     {--fields= : Campos para formularios e migrations}
     ';
@@ -121,7 +121,8 @@ class Scaffold extends Command
             'viewCreate' => app_path() . '/Console/Templates/VueCreate.stub',
             'viewDetail' => app_path() . '/Console/Templates/VueDetail.stub',
             'viewForm' => app_path() . '/Console/Templates/VueForm.stub',
-            'inputText' => app_path() . '/Console/Templates/InputTemplate.stub',
+            'input' => app_path() . '/Console/Templates/InputTemplate.stub',
+            'inputBoolean' => app_path() . '/Console/Templates/InputBooleanTemplate.stub',
         ];
 
         return file_get_contents($templates[$type]);
@@ -266,7 +267,7 @@ class Scaffold extends Command
                 '{{model}}',
             ],
             [
-                $this->transformBebabPlural($name),
+                $this->transformKebabPlural($name),
             ],
             $this->getStub('viewIndex')
         );
@@ -276,7 +277,7 @@ class Scaffold extends Command
                 '{{formFields}}',
             ],
             [
-                $this->transformBebabPlural($name),
+                $this->transformKebabPlural($name),
                 $formFields
             ],
             $this->getStub('viewForm')
@@ -287,7 +288,7 @@ class Scaffold extends Command
                 '{{modelUpper}}',
             ],
             [
-                $this->transformBebabPlural($name),
+                $this->transformKebabPlural($name),
                 Str::kebab(str_plural($name)),
             ],
             $this->getStub('viewCreate')
@@ -298,7 +299,7 @@ class Scaffold extends Command
                 '{{modelUpper}}',
             ],
             [
-                $this->transformBebabPlural($name),
+                $this->transformKebabPlural($name),
                 Str::kebab(str_plural($name)),
             ],
             $this->getStub('viewDetail')
@@ -432,7 +433,7 @@ class Scaffold extends Command
      * @param $data
      * @return string
      */
-    public function transformBebabPlural($data)
+    public function transformKebabPlural($data)
     {
         return Str::kebab(str_plural($data));
     }
@@ -454,8 +455,8 @@ class Scaffold extends Command
             case 'timestamp':
                 return $this->inputBuilder($column, 'date');
                 break;
-            default:
-                return $this->inputBuilder($column,'text');
+            case 'boolean':
+                return $this->inputBuilder($column, 'boolean');
                 break;
         }
     }
@@ -476,10 +477,10 @@ class Scaffold extends Command
             ],
             [
                 $column,
-                ucfirst($column),
+                ucfirst(str_replace('_', ' ', $column)),
                 $type,
             ],
-            $this->getStub('inputText')
+            $this->getStub($type !== 'boolean' ? 'input' : 'inputBoolean')
         );
 
         return $template;
