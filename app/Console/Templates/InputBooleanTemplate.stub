@@ -1,0 +1,13 @@
+<div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="{{field}}">{{label}}</label>
+                    <select :class="['form-control', isFieldValid('{{field}}') ]"
+                            id="{{field}}" v-model="dataResponse.{{field}}" required>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        {{errorData['{{field}}']}}
+                    </div>
+                </div>
+            </div>

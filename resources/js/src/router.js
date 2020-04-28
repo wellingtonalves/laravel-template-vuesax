@@ -196,54 +196,6 @@ const router = new Router({
                         }
                     ]
                 },
-                {
-                    path: '/representatives',
-                    component: () => import('./views/pages/RouterViewComponent.vue'),
-                    children: [
-                        {
-                            path: '',
-                            name: 'Representatives',
-                            component: () => import('./views/pages/Representatives/Representatives.vue'),
-                            meta: {
-                                title: 'Representantes',
-                                requiresAuth: true,
-                                rule: 'representatives',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Representantes', active: true},
-                                ],
-                            }
-                        },
-                        {
-                            path: '/representatives/create',
-                            component: () => import('./views/pages/Representatives/RepresentativesCreate.vue'),
-                            meta: {
-                                title: 'Novo representante',
-                                requiresAuth: true,
-                                rule: 'representatives-store',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Representantes', url: '/representatives'},
-                                    {title: 'Novo representante', active: true},
-                                ],
-                            }
-                        },
-                        {
-                            path: '/representatives/:uuid/edit',
-                            component: () => import('./views/pages/Representatives/RepresentativesDetail.vue'),
-                            meta: {
-                                title: 'Detalhes do representante',
-                                requiresAuth: true,
-                                rule: 'representatives',
-                                breadcrumb: [
-                                    {title: 'Home', url: '/dashboard'},
-                                    {title: 'Representantes', url: '/clients'},
-                                    {title: 'Detalhes do representante', active: true},
-                                ],
-                            }
-                        }
-                    ]
-                },
             ],
         },
         {
