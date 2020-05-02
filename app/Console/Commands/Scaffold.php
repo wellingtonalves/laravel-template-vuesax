@@ -293,7 +293,7 @@ class Scaffold extends Command
             ],
             [
                 $this->transformKebabPlural($name),
-                Str::kebab(str_plural($name)),
+                str_plural($name),
             ],
             $this->getStub('viewCreate')
         );
@@ -304,7 +304,7 @@ class Scaffold extends Command
             ],
             [
                 $this->transformKebabPlural($name),
-                Str::kebab(str_plural($name)),
+                str_plural($name),
             ],
             $this->getStub('viewDetail')
         );
