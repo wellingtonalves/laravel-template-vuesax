@@ -126,6 +126,7 @@ class Scaffold extends Command
             'viewForm' => app_path() . '/Console/Templates/VueForm.stub',
             'input' => app_path() . '/Console/Templates/InputTemplate.stub',
             'inputBoolean' => app_path() . '/Console/Templates/InputBooleanTemplate.stub',
+            'routesVue' => app_path() . '/Console/Templates/RoutesVue.stub',
         ];
 
         return file_get_contents($templates[$type]);
