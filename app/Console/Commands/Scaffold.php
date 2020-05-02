@@ -69,6 +69,9 @@ class Scaffold extends Command
             return $this->controller($name);
         }
         if ($name = $args['model']) {
+            if ($this->fields) {
+                $this->postScript($name);
+            }
             return $this->model($name);
         }
         if ($name = $args['repository']) {
@@ -246,7 +249,7 @@ class Scaffold extends Command
             ],
             [
                 $name,
-                str_plural(strtolower($name)),
+                Str::kebab(str_plural($name)),
             ],
             $this->getStub('policy')
         );
@@ -314,6 +317,8 @@ class Scaffold extends Command
         file_put_contents("{$dir}/{$fileName}Form.vue", $vueFormTemplate);
         file_put_contents("{$dir}/{$fileName}Create.vue", $vueCreateTemplate);
         file_put_contents("{$dir}/{$fileName}Detail.vue", $vueDetailTemplate);
+
+        $this->buildRoutesView($name);
     }
 
     /**
@@ -484,5 +489,31 @@ class Scaffold extends Command
         );
 
         return $template;
+    }
+
+    /**
+     * Create routes to views (Vue)
+     * @param $name
+     */
+    public function buildRoutesView($name)
+    {
+        $replace = str_replace(
+            [
+                '{{route}}',
+                '{{title}}',
+                '{{module}}',
+            ],
+            [
+                Str::kebab(str_plural($name)),
+                str_plural($name),
+                str_plural($name),
+            ],
+            $this->getStub('routesVue')
+        );
+
+        $namePlural = str_plural($name);
+        file_put_contents(app_path("../resources/js/src/views/pages/{$namePlural}/routes.js"), $replace);
+        $this->output->writeln('Import this in resources/js/src/router.js >>>>>');
+        $this->output->writeln("import {$namePlural} from '@/views/pages/{$namePlural}/routes.js';");
     }
 }

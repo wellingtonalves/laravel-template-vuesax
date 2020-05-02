@@ -1,0 +1,48 @@
+export default {
+    path: '/{{route}}',
+    component: () => import('@/views/pages/RouterViewComponent.vue'),
+    children: [
+        {
+            path: '',
+            name: '{{title}}',
+            component: () => import('@/views/pages/{{module}}/{{module}}.vue'),
+            meta: {
+                title: '{{title}}',
+                requiresAuth: true,
+                rule: '{{route}}',
+                breadcrumb: [
+                    {title: 'Home', url: '/dashboard'},
+                    {title: '{{title}}', active: true},
+                ],
+            }
+        },
+        {
+            path: '/{{route}}/create',
+            component: () => import('@/views/pages/{{module}}/{{module}}Create.vue'),
+            meta: {
+                title: 'Novo',
+                requiresAuth: true,
+                rule: '{{route}}-store',
+                breadcrumb: [
+                    {title: 'Home', url: '/dashboard'},
+                    {title: '{{title}}', url: '/{{route}}'},
+                    {title: 'Novo', active: true},
+                ],
+            }
+        },
+        {
+            path: '/{{route}}/:uuid/edit',
+            component: () => import('@/views/pages/{{module}}/{{module}}Detail.vue'),
+            meta: {
+                title: 'Detalhes',
+                requiresAuth: true,
+                rule: '{{route}}',
+                breadcrumb: [
+                    {title: 'Home', url: '/dashboard'},
+                    {title: '{{title}}', url: '/{{route}}'},
+                    {title: 'Detalhes', active: true},
+                ],
+            }
+        }
+    ]
+}
