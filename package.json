@@ -18,7 +18,7 @@
         "algoliasearch": "^3.33.0",
         "apexcharts": "^3.6.12",
         "auth0-js": "^9.10.4",
-        "axios": "^0.18",
+        "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "chart.js": "^2.8.0",
         "cross-env": "^5.2.1",
